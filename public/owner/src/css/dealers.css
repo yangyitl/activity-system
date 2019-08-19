@@ -1,0 +1,134 @@
+.dealers-order {
+    position: relative;
+    height: 100%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.search-form {
+    display: inline-block;
+    border: 1px solid #ededed;
+    border-radius: .1rem;
+    height: 40px;
+}
+
+.weui-search-bar {
+    background: #fff;
+    height: 10%;
+}
+
+.weui-search-bar:after {
+    border: none !important;
+}
+
+.list-table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    color: #888;
+    font-size: 18px;
+}
+
+th {
+    border-bottom: 1px solid #EDEDED;
+    color: #333;
+    font-weight: 300;
+    text-align: center;
+}
+
+table tr:nth-child(even) {
+    background: #EDEDED;
+}
+
+.radio {
+    border: 1px solid;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    display: block;
+}
+
+.dealers-order .weui-tab .weui-tab__panel {
+    height: 90%;
+    padding-bottom: 90px;
+}
+
+.radio-all {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    height: 40px;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.radio-all-a {
+    line-height: 30px;
+}
+
+.left {
+    text-align: left !important;
+}
+
+.dealers-p {
+    margin: 0;
+    padding: 0 !important;
+}
+
+.dealers-button {
+    background: #e08759;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    padding: 2px 5px;
+}
+
+.sele-button {
+    background: #fff;
+    border: 1px solid #333;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+}
+
+.all-button {
+    background: #fff;
+    border: none;
+    font-size: 15px;
+}
+
+.radio-all-in {
+    display: inline-block;
+    width: 50%;
+    padding: 10px;
+    position: absolute;
+}
+
+.radio-po-l {
+    left: 0;
+    text-align: left;
+}
+
+.radio-po-r {
+    right: 0;
+    text-align: right;
+}
+
+.tr-text-decoration {
+    text-decoration: underline;
+}
+
+.dealers-order .selected {
+    background: #e08759;
+}
+
+.w-30px{
+    width: 30px;
+    padding-left: 5px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.tr-text-account{
+    font-size: 15px;
+}

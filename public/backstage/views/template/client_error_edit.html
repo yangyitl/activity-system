@@ -1,0 +1,34 @@
+<div class="inmodal">
+    <div class="modal-header">
+        <h6 class="modal-title">故障处理</h6>
+    </div>
+    <div class="modal-body p-sm">
+    	<form class="form-horizontal" role="form" name="addForm" novalidate>
+    		<div class="form-group">
+    			<label class="col-lg-2 control-label">故障类型</label>
+    			<div class="col-lg-9">
+                    <input class="form-control" type="text" name="type_name" ng-model="type_name"  disabled>
+    			</div>
+    		</div>
+            <div ng-show="remark.length" class="form-group">
+                <label class="col-lg-2 control-label">故障描述</label>
+                <div class="col-lg-9">
+                    <textarea class="form-control"  rows="5" ng-model="remark" disabled></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">回复</label>
+                <div class="col-lg-9">
+                    <textarea class="form-control" rows="5" ng-model="reply" placeholder="请填写回复的内容" required></textarea>
+                    <span class="help-block m-b-none text-danger" ng-show="addForm.reply.$dirty && addForm.reply.$invalid && addForm.reply.$error.required">
+                        *不能为空
+                    </span>
+                </div>
+            </div>
+    	</form>
+    </div>
+    <div class="modal-footer">
+    	<button type="button" class="btn btn-white" ng-click="cancel()" ng-disabled="wait">取消</button>
+        <button type="button" class="btn btn-primary ladda-button" ladda="wait" data-style="zoom-in" ng-click="ok()" ng-disabled="addForm.$invalid">保存</button>
+    </div>
+</div>

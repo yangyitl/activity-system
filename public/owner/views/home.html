@@ -1,0 +1,166 @@
+<section class="home ">
+    <div class="home-hd">
+        <div class="hd-info">
+            <div class="hd-login"></div>
+        </div>
+        <div class="hd-info-name" id="nickname">昵称</div>
+    </div>
+
+    <div class="home-bd">
+        <div class="bd-row">
+            <div class="row-item-ft">
+                <div class="ft-item">
+                    <a href="#!/meOrder" class="">
+                        <span class="ft-title">个人订单</span>
+                        <span class="ft-content" id="meOrder">0</span>
+                    </a>
+                </div>
+                <div class="ft-item">
+                    <a href="#!/dealers" class="">
+                        <span class="ft-title">经销订单</span>
+                        <span class="ft-content" id="subOrder">0</span>
+                    </a>
+                </div>
+                <div class="ft-item">
+                    <a href="#!/dealers" class="">
+                        <span class="ft-title">未审核订单</span>
+                        <span class="ft-content" id="unOrder">0</span>
+                    </a>
+                </div>
+                <div class="ft-item">
+                    <a href="#!/mgr" class="">
+                        <span class="ft-title">订单总数</span>
+                        <span class="ft-content" id="totalOrder">0</span>
+                    </a>
+                </div>
+                <div class="ft-item">
+                    <a href="javascript:void(0);">
+                        <span class="ft-title">添加经销商</span>
+                        <span class="ft-content" id="addAgent">+</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="home-maddl"></div>
+    </div>
+
+    <div class="home-goods" id="goods-name">
+        <div>纪莱熙|纪莱熙轻透美肌隔离防护喷雾</div>
+        <div class="home-goods-price">
+            <label>¥</label>
+            <span>19.9</span>
+            <a href="#!/addOrder">
+                <button class="add-order-button">立即购买</button>
+            </a>
+        </div>
+        <div style="color: red;
+    font-size: 18px;
+    margin: 10px 10%;
+    width: 80%;
+    box-sizing: border-box;"> 当前剩余库存：<span id="inventory">0</span>
+        </div>
+        <div style="color: #0082ff;
+    font-size: 13px;
+    margin: 0 10%;
+    width: 80%;
+    box-sizing: border-box;">提示:您有未提交或未审核的订单、若未收到款请督促下级尽快支付后通过审核、若已收到款，请尽快提交上级审核、否则会耽误发货时间！
+        </div>
+
+    </div>
+    <div class="weui-cells home-notice">
+        <div class="weui-cell">
+            <div class="weui-cell__bd tr-text-decoration" id="help">功能介绍</div>
+        </div>
+    </div>
+
+    <!-- 添加经销商 -->
+    <div class="add-agent hide" id="addAgentHide">
+        <div class="title">添加经销商</div>
+        <div class="add-agent-msg">
+            <div class="add-agent-name">
+                <input class="name" type="text" name="name" id="name"/>
+                <div>真实姓名</div>
+            </div>
+            <div class="add-agent-lian">
+                <div>-</div>
+                <div>-</div>
+            </div>
+            <div class="add-agent-mobile">
+                <input class="" type="text" maxlength="11" name="mobile" id="mobile"/>
+                <div>手机号码</div>
+            </div>
+            <div></div>
+        </div>
+        <div class="w-100p">
+            <button class="s-botton">确定添加</button>
+            <button class="c-botton">取消</button>
+        </div>
+    </div>
+
+    <!-- 添加成功 -->
+    <div class="add-agent hide" id="s_add">
+        <div class="title"><i class="weui-icon-success"></i>添加成功</div>
+        <div class="w-100p ">
+            <div class="weui-cells weui-cells_form">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">手机号</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" id="s_mobile" value="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-100p ">
+            <div class="weui-cells weui-cells_form">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">密码</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" id="s_pass" value="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" cp">
+            <button class="cp-botton" id="agree" data-clipboard-text="111">复制账号和密码</button>
+        </div>
+    </div>
+    <div class="referral hide">
+        <div class="referral-title">功能介绍</div>
+        <div class="red">个人订单（0/0）</div>
+        <div>1.由我们自己个人提交的订单（这里不包含下级的订单）</div>
+        <div>“0/0”前面是总订单数后面是订单总瓶数!</div>
+
+        <div>2.个人提交的订单，上级审核通过后数据才会发生变化，若上级未审核通过</div>
+        <div>暂不会在此页面显示数据累计！</div>
+
+        <div class="red">经销订单（0/0）</div>
+        <div>1.包含个人订单+下级经销商的订单数据统计（只显示上级审核通过后的订单数据）若上级未审核通过暂不会在此页面显示数据累计！</div>
+
+        <div>2.未审核区里面的订单数据为个人购买的订单+下级经销商提交给上级审核的订单!</div>
+        <div>
+            当收到下级经销商货款后，可勾选该订单然后点击右下角“提交订单”按钮，该订单会进入到“待提交”区；当累计到一定的订单数量后（把对应的货款金额打款给上级经销商），即可一次性勾选全部订单然后再次点击右下角“提交订单”按钮，该订单就会在上级经销商那里显示出数据；通知上级经销商审核通过即可，若“待提交”区仍然显示订单数、则说明上级经销商还未审核我们的订单、此时就要确认下自己是否已经付款，如已确认付款就提醒上级审核订单！
+        </div>
+
+        <div>3.上级审核我们提交的订单之后、这笔订单就进入了已审核区、同时也会在订单总数</div>
+        <div>显示订单数！</div>
+
+        <div class="red">未审核订单（0/0）</div>
+        <div>1.提醒我们还有未审核的订单需要提交，审核后数据就会归零（未审核订单数为个人购买的订单+下级经销商提交给上级审核的订单）！</div>
+
+        <div>2.其他功能和数据如上【经销订单】所示</div>
+
+        <div class="red">总订单（0/0）</div>
+        <div>1.个人订单+下级经销商订单的总和（包括未审核订单）。</div>
+
+        <div>2.点击进入页面为下单通知及上级审核通知：“提交审核”是个人提交了订单但上级还未审核订单的状态显示；“已审核”是个人提交订单上级已经审核通过的状态显示</div>
+
+        <div class="red">添加经销商</div>
+        <div>1.个人为直属下级经销商注册账号（便于识别统计各自及团队业绩、非直属下级代理请勿发放账号）</div>
+
+        <div>2.输入下级经协商的姓名及电话号码后点击“确认添加”即可添加成功！</div>
+
+        <div>3.添加成功之后必须要点击“复制账号和密码”才可以操作下一步（复制账号密码后务必第一时间发送给下级经销商）</div>
+        <div>*若有不懂之处可联系、纪莱熙客服、资料库或素材共享号！</div>
+
+    </div>
+</section>

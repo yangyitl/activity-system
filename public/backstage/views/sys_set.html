@@ -1,0 +1,55 @@
+<section class="wrapper wrapper-content animated fadeInRight" ng-controller="sysCtrl">
+    <div class="row tabs-container table-list">
+        <div class="table-options m-b-sm">
+            <form name="searchForm" novalidate ng-submit="FnSys.render()">
+                <div class="col-md-4 option-item ">
+                    <button class="btn btn-primary" type="button" ng-click="FnSys.add()">新增规格</button>
+                </div>
+                <div class="col-md-4 col-md-offset-4 option-item">
+                    <div class="input-group">
+                        <input class="form-control font-12 bg-white" type="text" ng-model="remark"
+                               placeholder="请输入名称">
+                        <span class="input-group-btn">
+							<button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
+						</span>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-12">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover table-center">
+                    <thead>
+                    <tr>
+                        <th>购买单位</th>
+                        <th>对应数量(瓶)</th>
+                        <th>时间</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in listData track by $index">
+                        <td>{{item.name}}</td>
+                        <td>
+                            <input class="form-control" type="text" name="configMsg" ng-model="item.number" ng-blur="FnSys.edit($index)" />
+                        </td>
+                        <td class="max-width-md">
+                            {{item.updated_at}}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="tabs-ft">
+                <div ng-if="!sum" class="tabs-ft-tips"></div>
+                <div class="tabs-pagination">
+                    <pagination class="tabs-pagination-switch pagination-sm" ng-model="page" total-items="sum"
+                                items-per-page="len" max-size="max" boundary-links="true" first-text="首页" last-text="尾页"
+                                previous-text="上一页" next-text="下一页" ng-change="FnSys.render(page)"></pagination>
+                    <div class="tabs-pagination-sum">总数：{{sum}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

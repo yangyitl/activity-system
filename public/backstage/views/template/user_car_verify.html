@@ -1,0 +1,93 @@
+<div class="inmodal">
+    <div class="modal-header">
+        <h6 class="modal-title">审核车主</h6>
+    </div>
+    <div class="modal-body p-sm">
+    	<form class="form-horizontal" role="form" name="addForm" novalidate>
+    		<div class="form-group">
+                <label class="col-lg-2 control-label">名称</label>
+                <div class="col-lg-9">
+                    <input class="form-control " type="text" name="name" ng-model="name"  placeholder="*请填写名称" required readonly>
+                    <span class="help-block m-b-none text-danger" ng-show="addForm.name.$dirty && addForm.name.$invalid && addForm.name.$error.required">
+                        *不能为空
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">账号</label>
+                <div class="col-lg-9">
+                    <input class="form-control " type="text" name="account" ng-model="account"  placeholder="*请填写账号(手机号)" ng-pattern="regPhone"  required readonly >
+                    <span class="help-block m-b-none text-danger" ng-show="addForm.account.$dirty && addForm.account.$invalid && (addForm.account.$error.pattern || addForm.account.$error.required ) ">
+                        *手机号格式错误
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">身份证</label>
+                <div class="col-lg-9">
+                    <img img-view class="img-md img-rounded cursor m-r-xs " size="md" ng-src="{{item}}" ng-repeat="item in id_card_img track by $index">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">驾驶证</label>
+                <div class="col-lg-9">
+                    <img img-view class="img-md img-rounded cursor" size="md" ng-src="{{driving_img}}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">行驶证</label>
+                <div class="col-lg-9">
+                    <img img-view class="img-md img-rounded cursor" size="md" ng-src="{{travel_img}}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">审核状态</label>
+                <div class="col-lg-9">
+                    <label class="checkbox-inline p-l-n">
+                        <input type="radio" icheck ng-value=1 ng-model="is_auth" name="is_auth"> 通过
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="radio" icheck ng-value=2 ng-model="is_auth" name="is_auth"> 不通过
+                    </label>
+                </div>
+            </div>
+            <div class="form-group" ng-show="is_auth==1">
+               <label class="col-lg-2 control-label">真实姓名</label>
+                <div class="col-lg-9">
+                    <input class="form-control bg-white" type="text" name="real_name" ng-model="real_name"  placeholder="*请填写真实姓名" >
+                    <span class="help-block m-b-none text-danger" ng-show="addForm.real_name.$dirty && addForm.real_name.$invalid && addForm.real_name.$error.required ">
+                        *不能为空
+                    </span>
+                </div>
+            </div>
+            <div class="form-group" ng-show="is_auth==1">
+                <label class="col-lg-2 control-label">身份证号</label>
+                <div class="col-lg-9">
+                    <input class="form-control bg-white" type="text" name="id_no" ng-model="id_no"  placeholder="*请填写身份证号" ng-pattern="regID" >
+                    <span class="help-block m-b-none text-danger" ng-show="addForm.id_no.$dirty && addForm.id_no.$invalid && (addForm.id_no.$error.pattern || addForm.id_no.$error.required ) ">
+                        *身份证号格式错误
+                    </span>
+                </div>
+            </div>
+            <div class="form-group" ng-show="is_auth==1">
+                <label class="col-lg-2 control-label">车牌号</label>
+                <div class="col-lg-9">
+                    <input class="form-control bg-white" type="text" name="car_no" ng-model="car_no"  placeholder="*请填写车牌号" >
+                    <span class="help-block m-b-none text-danger" ng-show="addForm.car_no.$dirty && addForm.car_no.$invalid ">
+                        *不能为空
+                    </span>
+                </div>
+            </div>
+            <div ng-show="is_auth==2" class="form-group">
+                <label class="col-lg-2 control-label">原因</label>
+                <div class="col-lg-9">
+                    <input class="form-control" type="text" name="remark" ng-model="remark" placeholder="*请填写不通过的原因" >
+                </div>
+            </div>
+    	</form>
+    </div>
+    <div class="modal-footer">
+    	<button type="button" class="btn btn-white" ng-click="cancel()" ng-disabled="wait">取消</button>
+        <button type="button" class="btn btn-primary ladda-button" ladda="wait" data-style="zoom-in" ng-click="ok()" ng-disabled="addForm.$invalid" >保存</button>
+    </div>
+</div>

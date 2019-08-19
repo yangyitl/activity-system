@@ -1,0 +1,103 @@
+.upload {
+  font-size: .32rem;
+  /* background-color: #f7f7f7; */
+}
+
+.wrp-hd {
+  padding: .3rem .3rem 0;
+}
+
+.wrp-hd-cells:before,
+.wrp-hd-cells:after,
+.wrp-hd-cells .weui-cell:before {
+  display: none;
+}
+
+.wrp-hd-cells {
+  padding: .4rem .3rem;
+  border-radius: .12rem;
+  background-color: #fff;
+}
+
+.wrp-bd {
+  padding: 0 .2rem;
+}
+
+.wrp-flex {
+  margin-top: .6rem;
+  overflow: hidden;
+}
+
+.wrp-flex .flex-title {
+  padding: 0 .1rem;
+  margin-bottom: .1rem;
+}
+
+.wrp-flex .flex-cells:before,
+.wrp-flex .flex-cells:after {
+  contain: '';
+  display: table;
+}
+
+.wrp-flex .flex-cells:after {
+  clear: both;
+}
+
+.flex-cells .flex-cell {
+  float: left;
+  position: relative;
+  width: 50%;
+  height: 2.2rem;
+  padding: .1rem;
+  box-sizing: border-box;
+}
+
+.flex-cells .flex-cell .item-wrp {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: .12rem;
+}
+
+.flex-cells .flex-cell .item-temp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: .12rem;
+}
+
+.flex-cells .flex-cell .item-show {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border-radius: .12rem;
+}
+
+.flex-cells .flex-cell .item-tip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  padding: .1rem .3rem;
+  font-size: .28rem;
+  color: #fff;
+  white-space: nowrap;
+  background-color: rgba(0,0,0,.6);
+  border-radius: .4rem;
+  -webkit-transform: translate3d(-50%,-50%,0);
+          transform: translate3d(-50%,-50%,0);
+}
+
+.wrp-ft {
+  margin-bottom: .4rem;
+}
+
+.wrp-ft .ft-btn {
+  color: #574c5f;
+  background-color: #f7e725;
+}

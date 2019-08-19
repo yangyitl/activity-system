@@ -1,0 +1,75 @@
+.user-device-mgr {
+  position: relative;
+  height: 100%;
+  font-size: .32rem;
+  background-color: #f7f7f7;
+}
+
+.user-device-mgr .wrp {
+  position: relative;
+  height: 1.55rem;
+  background-color: #574e5f;
+}
+
+.user-device-mgr .wrp-bd {
+  position: relative;
+  top: .4rem;
+  left: 0;
+  margin: 0 .3rem;
+  padding-bottom: .5rem;
+}
+
+.user-device-mgr .wrp-bd .weui-form-preview {
+  border-radius: .12rem;
+}
+
+.user-device-mgr .wrp-bd .weui-form-preview:before,
+.user-device-mgr .wrp-bd .weui-form-preview:after {
+  display: none;
+}
+
+.user-device-mgr .wrp-bd .weui-form-preview__value {
+  color: #574c5f;
+}
+
+.user-device-mgr .wrp-bd .weui-form-preview__value.item-sign {
+  color: #ffd102;
+}
+
+.user-device-mgr .wrp-bd .hd-wrp {
+  position: relative;
+  color: #574c5f;
+  text-align: center;
+}
+
+.user-device-mgr .wrp-bd .hd-wrp .hd-title {
+  font-size: .32rem;
+}
+
+.user-device-mgr .wrp-bd .hd-wrp .hd-desc {
+  font-size: .44rem;
+}
+
+.user-device-mgr .wrp-bd .hd-wrp .hd-thumb {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: .8rem;
+  height: .8rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.user-device-mgr .wrp-bd .bd-btns {
+  margin-top: .4rem;
+}
+
+.user-device-mgr .wrp-bd .bd-btns .btn-primary {
+  color: #f7e725;
+  background-color: #fff;
+  border: .01rem solid #f7e727;
+}
+
+.user-device-mgr .wrp-bd .bd-btns .btn-primary:after {
+  display: none;
+}

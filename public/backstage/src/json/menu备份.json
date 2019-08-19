@@ -1,0 +1,88 @@
+{
+	"dashboards": {
+		"parentIconClass": "fa fa-th-large",
+		"parentPageName": "平台概览",
+		"parentStateName": "dashboards.board",
+		"subMenu": ""
+	},
+	"client": {
+		"parentIconClass": "fa fa-inbox",
+		"parentPageName": "设备管理",
+		"subMenu": [{
+			"subPageName": "设备列表",
+			"subStateName": "client.list"
+		},{
+			"subPageName": "故障类型",
+			"subStateName": "client.etype"
+		},{
+			"subPageName": "设备报障",
+			"subStateName": "client.error"
+		}]
+	},
+	"user": {
+		"parentIconClass": "fa fa-user",
+		"parentPageName": "用户管理",
+		"subMenu": [{
+			"subPageName": "招商合伙人",
+			"subStateName": "user.operator"
+		}, {
+			"subPageName": "服务商",
+			"subStateName": "user.oem"
+		}, {
+			"subPageName": "代理合伙人",
+			"subStateName": "user.agent"
+		}, {
+			"subPageName": "车主",
+			"subStateName": "user.car_owner"
+		}, {
+			"subPageName": "支付宝车主",
+			"subStateName": "user.car_alipay"
+		}, {
+			"subPageName": "用户",
+			"subStateName": "user.list"
+		}]
+	},
+	"finance": {
+		"parentIconClass": "fa fa-rmb",
+		"parentPageName": "财务管理",
+		"subMenu": [
+			{
+			"subPageName": "加盟费管理",
+			"subStateName": "finance.league"
+		},{
+			"subPageName": "提现管理",
+			"subStateName": "finance.cash"
+		},{
+			"subPageName": "用户订单",
+			"subStateName": "finance.order"
+		},{
+			"subPageName": "设备购买订单",
+			"subStateName": "finance.client_order"
+		},{
+			"subPageName": "设备生产订单",
+			"subStateName": "finance.produce_order"
+		}]
+	},
+	"coupon": {
+		"parentIconClass": "fa fa-star",
+		"parentPageName": "优惠设置",
+		"subMenu": [{
+			"subPageName": "优惠区间",
+			"subStateName": "coupon.price"
+		},{
+			"subPageName": "分成区间",
+			"subStateName": "coupon.divide"
+		}]
+	},
+	"sys": {
+		"parentIconClass": "fa fa-gears",
+		"parentPageName": "系统设置",
+		"subMenu": [{
+			"subPageName": "系统配置",
+			"subStateName": "sys.set"
+		},{
+			"subPageName": "授权二维码",
+			"subStateName": "sys.code"
+		}]
+	}
+}

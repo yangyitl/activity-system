@@ -1,0 +1,379 @@
+.home {
+    position: relative;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    background: #fff;
+}
+
+.home .home-hd {
+    height: 180px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: url("../img/bg-md.png") no-repeat;
+    background-size: 100%;
+}
+
+.home .hd-info {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    text-align: center;
+}
+
+.home .hd-login {
+    background: url(../img/logo.png) no-repeat;
+    background-size: 100%;
+    width: 65px;
+    height: 65px;
+    position: relative;
+    top: 50px;
+    margin: 0 auto;
+}
+
+
+.home-hd .hd-info-name {
+    display: block;
+    font-size: 20px;
+    color: #fff;
+    top: 115px;
+    width: 100%;
+    position: absolute;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.home .home-bd {
+    min-height: 60px;
+    width: 100%;
+    position: absolute;
+    top: 190px;
+    left: 0;
+    right: 0;
+    font-size: 30px;
+    box-sizing: border-box;
+}
+
+/* row */
+.home-bd .bd-row {
+    padding: 5px;
+    height: auto;
+}
+
+
+.home-bd .bd-row .row-item-ft {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    height: 100%;
+}
+
+.home-bd .row-item-ft .ft-item {
+    -webkit-box-flex: 0 1 auto;
+    -webkit-flex: 0 1 auto;
+    flex: 0 1 auto;
+}
+
+.home-bd .ft-item {
+    border: 1px solid #e2e2e2;
+    padding: 5px;
+    background: #EDEDED;
+    min-width: 18%;
+    border-radius: 15px;
+    line-height: 15px;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.home-bd .row-item-ft .ft-title {
+    display: block;
+    font-size: 10px;
+    color: #000;
+}
+
+.home-bd .row-item-ft .ft-content {
+    display: block;
+    font-weight: bold;
+    font-size: 15px;
+    color: #9c5916;
+}
+
+.home .home-maddl {
+    background: #ededed;
+    height: 8px;
+    width: 100%;
+    position: relative;
+    top: 10px;
+}
+
+.home .home-goods {
+    text-align: center;
+    font-size: 20px;
+    padding-top: 10px;
+    position: absolute;
+    top: 280px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+.home .home-goods-price {
+    color: red;
+    font-size: 15px;
+}
+
+.home-goods-price span {
+    font-size: 35px;
+}
+
+.home .add-order-button {
+    padding: 5px 10px;
+    font-size: 15px;
+    background: red;
+    color: #fff;
+    border: none;
+}
+
+.home .add-agent {
+    width: 90%;
+    margin: 0 5%;
+    background: rgba(75, 76, 77, 0.9);
+    height: 160px;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+    top: 200px;
+    font-size: 18px;
+    z-index: 9999;
+}
+
+.home .title {
+    text-align: center;
+    font-size: 19px;
+    color: #fff;
+    font-weight: 500;
+    padding: 5px;
+}
+
+.home .add-agent .add-agent-msg {
+    box-sizing: border-box;
+    width: 96%;
+    margin: 0 2%;
+    text-align: center;
+
+}
+
+.home .add-agent .add-agent-name {
+    display: inline-block;
+    width: 25%;
+
+}
+
+.home .add-agent .add-agent-name div {
+    font-size: 12px;
+    color: #fff;
+    padding-top: 5px;
+}
+
+.home .add-agent .add-agent-lian {
+    display: inline-block;
+    width: 5%;
+    color: #fff;
+    padding-top: 5px;
+}
+
+.home .add-agent .add-agent-mobile {
+    display: inline-block;
+    min-width: 40%;
+    max-width: 50%;
+}
+
+.home .add-agent .add-agent-mobile div {
+    color: #fff;
+    font-size: 12px;
+    padding-top: 5px;
+}
+
+.home .add-agent input {
+    padding: 5px 0 5px 5px;
+    width: 100%;
+    height: 25px;
+    font-size: 15px;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.w-100p {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.home .s-botton {
+    background: #e08759;
+    box-sizing: border-box;
+    border: none;
+    padding: 5px;
+    font-size: 15px;
+    color: #fff;
+    border-radius: 5px;
+    margin-right: .2rem;
+    min-width: 100px;
+}
+
+.home .c-botton {
+    background: #EDEDED;
+    box-sizing: border-box;
+    border: none;
+    padding: 5px;
+    font-size: 15px;
+    color: #333;
+    border-radius: .1rem;
+    min-width: 100px;
+}
+
+.home .add-agent .weui-icon-success {
+    color: #fff;
+}
+
+.home .add-agent .weui-cells {
+    margin: 0 5%;
+    background: none;
+    color: #fff;
+}
+
+.home .add-agent .weui-cell {
+    padding: 0;
+}
+
+.home .add-agent .weui-cells:before {
+    border: none !important;
+}
+
+.home .add-agent .weui-cells:after {
+    border: none !important;
+}
+
+.home .add-agent .weui-cell__bd {
+    background: #ffffff !important;
+    border-radius: .1rem;
+    color: #000 !important;
+
+}
+
+
+.cp {
+    text-align: right;
+    padding-right: .3rem;
+    margin-top: 5px;
+}
+
+.cp-botton {
+    background: #e08759;
+    box-sizing: border-box;
+    border: none;
+    padding: 5px;
+    font-size: 15px;
+    color: #fff;
+    border-radius: 5px;
+    min-width: 100px;
+    margin-right: 22px;
+}
+
+.ft-content a {
+    color: #9c5916;
+}
+
+.home .home-notice {
+    position: absolute;
+    bottom: 60px;
+    color: #666666;
+    text-align: center;
+    font-size: 12px !important;
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.home .home-notice a {
+    height: 100%;
+    text-align: center;
+}
+
+
+.home-notice .weui-cell__hd img {
+    width: 20px;
+    height: 20px;
+}
+
+.home-notice .home-notice-title {
+
+}
+
+.home .weui-cells:before {
+    border: none;
+}
+
+.home .weui-cells:after {
+    border: none;
+}
+
+@media screen and (max-width: 320px) {
+    .home .home-hd {
+        height: 150px;
+    }
+
+    .home .home-bd {
+        top: 160px;
+    }
+
+    .home .home-goods {
+        top: 245px;
+    }
+
+    .home .home-notice {
+        font-size: 10px !important;
+    }
+}
+
+.home .referral {
+    width: 94%;
+    margin: 0 3% 5% 3%;
+    background: rgba(75, 76, 77, 0.9);
+    height: 85%;
+    position: relative;
+    top: 5%;
+    font-size: 13px;
+    z-index: 9999;
+    overflow-y: auto;
+    border-radius: 5px;
+}
+
+.home .referral div {
+    color: #fff;
+    padding: 5px 15px;
+}
+
+.home .tr-text-decoration {
+    text-decoration: underline;
+}
+
+.home .referral-title {
+    text-align: center;
+    color: red!important;
+    font-size: 15px;
+}
+
+.home .red{
+    color: red!important;
+}

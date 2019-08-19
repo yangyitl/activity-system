@@ -1,0 +1,253 @@
+.me-order {
+    position: relative;
+    height: 100%;
+    background-color: #fff;
+}
+
+.me-order .hd {
+    padding: 0 .3rem;
+    background: #fff;
+}
+
+.me-order .hd .hd-cell {
+    position: relative;
+    padding: .2rem 0;
+    font-size: .28rem;
+}
+
+.me-order .hd .hd-cell:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: .01rem;
+    border-top: .01rem solid #bbb;
+}
+
+.me-order .hd .hd-cell.scroll {
+    padding: 0
+}
+
+.me-order .hd .hd-cell .item-wrp {
+    padding: .2rem 0;
+    white-space: nowrap;
+    word-break: keep-all;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.me-order .hd .hd-cell.navigate:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: .3rem;
+    width: .1rem;
+    height: .1rem;
+    margin-top: -.07rem;
+    border-width: .02rem .02rem 0 0;
+    border-color: #574e5f;
+    border-style: solid;
+    -webkit-transform: matrix(.71, .71, -.71, .71, 0, 0);
+    transform: matrix(.71, .71, -.71, .71, 0, 0);
+}
+
+.me-order .hd .hd-scroll {
+    padding: .1rem 0;
+    word-break: keep-all;
+    white-space: nowrap;
+}
+
+.me-order .hd .hd-item {
+    display: inline-block;
+    margin-right: .3rem;
+    padding: .1rem .3rem;
+    color: #fff;
+    background-color: #bbb;
+    border: .01rem solid #bbb;
+    border-radius: .12rem;
+}
+
+.me-order .hd .hd-item:last-child {
+    margin-right: 0;
+}
+
+.me-order .hd .hd-item.active {
+    color: #f7e725;
+    background-color: #574e5f;
+    border: .01rem solid #f7e727;
+}
+
+.me-order .bd {
+    padding: 10px;
+    background: #fff;
+}
+
+.me-order .list-top {
+    border-top: 5px solid #EDEDED;
+}
+
+.me-order .bd .bd-got {
+    position: relative;
+    margin-top: .2rem;
+    margin-bottom: .3rem;
+    padding: .3rem;
+    text-align: center;
+    background-color: #f7e725;
+    border-radius: .12rem;
+}
+
+.me-order .bd-got .got-qa {
+    position: absolute;
+    top: .3rem;
+    right: .3rem;
+    width: .34rem;
+    height: .34rem;
+    font-size: .28rem;
+    line-height: .34rem;
+    color: #574e5f;
+    border: .02rem solid #574e5f;
+    border-radius: 100%;
+}
+
+.me-order .bd-got .got-wrp .wrp-title {
+    margin-top: .2rem;
+    font-size: .24rem;
+}
+
+.me-order .bd-got .got-wrp .wrp-money {
+    margin-top: .2rem;
+    margin-bottom: .2rem;
+    font-weight: bold;
+    font-size: .54rem;
+}
+
+.me-order .bd-got .got-wrp .wrp-money-sm {
+    margin-left: .1rem;
+    font-size: .22rem;
+    color: #999;
+}
+
+.me-order .bd .bd-list .list-cells {
+    padding: .1rem;
+    font-size: .28rem;
+    background-color: #fff;
+    border-radius: .12rem;
+    margin-bottom: .3rem;
+}
+
+.me-order .weui-cell {
+    padding: 4px 10px 0 10px;
+}
+
+
+.me-order .list-cells .weui-cell:before {
+    display: none;
+}
+
+.me-order .list-cells .weui-cell__bd,
+.me-order .list-cells .weui-cell__ft {
+    font-size: 13px;
+    color: #574e5f;
+}
+
+.me-order .list-cells .item-time .weui-cell__bd {
+    font-size: 16px;
+    color: #000;
+}
+
+
+
+.me-order .list-cells .item-time {
+    border-bottom: 1px solid #ededed;
+    padding: 10px 15px;
+}
+
+.me-order .order-d {
+    border: 1px solid #333;
+    background: #fff;
+    padding: 2px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.me-order .order-c {
+    border: 1px solid #333;
+    background: #666666;
+    padding: 2px;
+    border-radius: 5px;
+    margin-right: 10px;
+    color: #fff;
+}
+
+.me-order .order-s {
+    border: 1px solid #e08759;
+    color: #fff;
+    padding: 2px;
+    border-radius: 5px;
+    background: #e08759;
+
+}
+
+.me-order .sum {
+    color: #e08759;
+    font-size: 20px;
+}
+
+.me-order .me-order-mark {
+    font-size: 12px;
+    padding-right: .2rem;
+    color: #e08759;
+}
+
+.me-order .details {
+    width: 90%;
+    margin: 0 5%;
+    background: rgba(75, 76, 77, 0.9);
+    border-radius: .4rem;
+    text-align: left;
+    position: absolute;
+    top: 25%;
+    padding: 10px 20px 15px;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 15px;
+
+}
+.me-order .details-bot {
+    text-align: center;
+}
+
+.me-order .details-bot button {
+    border: none;
+    padding: 3px 5px;
+    font-size: 15px;
+    border-radius: .1rem;
+    min-width: 80px;
+    margin: 5px;
+}
+
+.me-order .details-bot-edit {
+    color: #fff;
+    background: #e08759;
+}
+
+.me-order .details-bot-ca {
+    color: #333;
+    background: #ededed;
+}
+
+.me-order .details-message {
+    padding-left: 20px;
+}
+
+.me-order .details-addr {
+    background: url(../img/edit-addr.png) no-repeat;
+    background-size: 20px;
+    padding-left: 20px;
+}
+
+.me-order .order-status {
+    background: #333333;
+    border: 1px solid #333333;
+}

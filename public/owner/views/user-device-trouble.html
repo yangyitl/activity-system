@@ -1,0 +1,23 @@
+<div class="weui-cells weui-cells_form">
+  <div class="weui-cell weui-cell_access">
+    <div class="weui-cell__hd">
+      <label class="weui-label">故障类型</label>
+    </div>
+    <div class="weui-cell__bd" id="onType">
+      <input class="weui-input" id="typeText" type="text" placeholder="请选择故障类型" readonly />
+    </div>
+    <div class="weui-cell__ft"></div>
+  </div>
+</div>
+<div class="weui-cells__title">故障描述</div>
+<div class="weui-cells weui-cells_form">
+  <div class="weui-cell">
+    <div class="weui-cell__bd">
+      <textarea class="weui-textarea" id="desc" placeholder="可选填设备故障详细描述" rows="3" maxlength="200"></textarea>
+      <div class="weui-textarea-counter trouble-counter">最多200字</div>
+    </div>
+  </div>
+</div>
+<div class="weui-btn-area">
+  <button class="weui-btn weui-btn_primary trouble-btn" id="onSubmit">提交</button>
+</div>

@@ -1,0 +1,118 @@
+<div class="slide-title">
+	<h5 class="pull-left">{{client_name}}-订单列表</h5>
+	<a class="pull-right" ng-click="FnOrder.closeSlider()">
+		<span class="fa fa-times"></span>
+	</a>
+</div>
+<div class="slide-content">
+	<div class="slide-full-scroll" full-scroll>
+		<div class="tabs-container">
+			<div class="row table-options m-b-sm">
+				<div class="col-md-4 pull-right option-item">
+					<div class="input-group">
+						<span class="input-group-addon font-16"><i class="fa fa-calendar"></i></span>
+						<input class="form-control font-12 bg-white" type="text" date-range-picker options="dateOption" ng-model="dateRange" placeholder="可选择时间查询" readonly>
+						<span class="input-group-btn">
+							<button class="btn btn-primary" ng-click="FnOrder.search()"><i class="fa fa-search"></i></button>
+						</span>
+					</div>
+				</div>
+			</div>
+			<tabset>
+				<tab heading="支付宝订单" ng-click="FnOrder.orderTab(0)">
+					<div class="tab-bd">
+						<div class="table-responsive">
+							<table class="table table-striped table-hover table-center">
+								<thead>
+									<tr>
+										<th>用户昵称</th>
+										<th>用户头像</th>
+										<th>用户地址</th>
+										<th>用户性别</th>
+										<th>订单编号</th>
+										<th>交易时间</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr ng-repeat="item in listDataS track by $index">
+										<td>{{item.nickname}}</td>
+										<td><img img-view class="img-sm img-rounded cursor" ng-src="{{item.avatar}}"></td>
+										<td>{{item.province}}-{{item.city}}</td>
+										<td >{{item.gender == 'm' ? "男" : item.gender == 'f' ? "女" : "未知" }}</td>
+										<td>{{item.order_sn}}</td>
+										<td>{{item.created_at}}</td>
+									</tr>
+								</tbody>
+					        </table>
+						</div>
+					</div>
+				</tab>
+				<tab heading="微信支付订单" ng-click="FnOrder.orderTab(1)">
+					<div class="tab-bd">
+						<div class="table-responsive">
+							<table class="table table-striped table-hover table-center">
+					        	<thead>
+									<tr>
+										<th>用户昵称</th>
+										<th>用户头像</th>
+										<th>用户地址</th>
+										<th>用户性别</th>
+										<th>订单编号</th>
+										<th>交易时间</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr ng-repeat="item in listDataS track by $index">
+										<td>{{item.nickname}}</td>
+										<td><img img-view class="img-sm img-rounded cursor" ng-src="{{item.avatar}}"></td>
+										<td>{{item.province}}-{{item.city}}</td>
+										<td >{{item.gender == 'm' ? "男" : item.gender == 'f' ? "女" : "未知" }}</td>
+										<td>{{item.order_sn}}</td>
+										<td>{{item.created_at}}</td>
+									</tr>
+								</tbody>
+					        </table>
+						</div>
+					</div>
+				</tab>
+				<tab heading="广告订单" ng-click="FnOrder.orderTab(2)">
+					<div class="tab-bd">
+						<div class="table-responsive">
+							<table class="table table-striped table-hover table-center">
+					        	<thead>
+									<tr>
+										<th>用户昵称</th>
+										<th>用户头像</th>
+										<th>用户地址</th>
+										<th>用户性别</th>
+										<th>订单编号</th>
+										<th>交易时间</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr ng-repeat="item in listDataS track by $index">
+										<td>{{item.nickname}}</td>
+										<td><img img-view class="img-sm img-rounded cursor" ng-src="{{item.avatar}}"></td>
+										<td>{{item.province}}-{{item.city}}</td>
+										<td >{{item.gender == 'm' ? "男" : item.gender == 'f' ? "女" : "未知" }}</td>
+										<td>{{item.order_sn}}</td>
+										<td>{{item.created_at}}</td>
+									</tr>
+								</tbody>
+					        </table>
+						</div>
+					</div>
+				</tab>
+			</tabset>
+			<div class="tabs-ft">
+				<div ng-if="!sunsS" class="tabs-ft-tips"></div>
+				<div class="tabs-pagination">
+					<pagination class="tabs-pagination-switch pagination-sm" ng-model="pageS" total-items="sunsS" items-per-page="lenS" max-size="max" boundary-links="true" first-text="首页" last-text="尾页" previous-text="上一页" next-text="下一页" ng-change="FnOrder.get(pageS)"></pagination>
+					<div class="tabs-pagination-sum">总数：{{sunsS}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+

@@ -1,0 +1,178 @@
+<section  ng-controller="clientListCtrl">
+	<div class="wrapper wrapper-content animated fadeInRight">
+		<div class="tabs-container">
+			<div class="row table-options m-b-sm">
+				<form name="searchForm" novalidate ng-submit="list.render()" >
+					<div class="col-lg-2 col-md-4  option-item">
+						<input class="form-control font-12 bg-white" type="text" ng-model="hardware" placeholder="请输入版本头部" >
+					</div>
+					<div class="col-lg-2 col-md-4  option-item">
+						<input class="form-control font-12 bg-white" type="text" ng-model="ip" placeholder="请输入通信IP" >
+					</div>
+					<div class="col-lg-2 col-md-4  option-item">
+						<input class="form-control font-12 bg-white" type="text" ng-model="merName" placeholder="请输入商户名称" >
+					</div>
+					<div class="col-lg-2 col-md-4  option-item">
+						<input class="form-control font-12 bg-white" type="text" ng-model="name" placeholder="请输入设备地址" >
+					</div>
+					<div class="col-lg-2 col-md-4  option-item">
+						<input class="form-control font-12 bg-white" type="text" ng-model="sn" placeholder="请输入设备编码" >
+					</div>
+					<div class="col-lg-2 col-md-4  option-item">
+						<div class="input-group">
+							<input class="form-control font-12 bg-white" type="text" ng-model="qrCode" placeholder="请输入设备启动码" >
+							<span class="input-group-btn">
+								<button class="btn btn-primary" type="submit" ><i class="fa fa-search"></i></button>
+							</span>
+						</div>
+					</div>
+				</form>
+			</div>
+			<tabset>
+				<tab heading="已激活" ng-click="list.switch(1)">
+					<div class="tab-bd">
+						<div class="table-responsive">
+							<table class="table table-striped table-hover table-center">
+					        	<thead>				        		<tr>
+					        			<th class="sort" ng-class="sort == 'id' ? 'sort-active':''" ng-click="list.sortList('id')" >
+					        				<span>ID</span>
+					        			</th>
+					        			<th>设备名称</th>
+					        			<th>设备编码</th>
+					        			<th>启动码</th>
+					        			<th class="sort" ng-class="sort == 'start_number' ? 'sort-active':''" ng-click="list.sortList('start_number')" >
+					        				<span>启动次数</span>
+					        			</th>
+					        			<th>地址</th>
+					        			<th class="sort" ng-class="sort == 'connect' ? 'sort-active':''" ng-click="list.sortList('connect')" >
+					        				<span>信号强度</span>
+					        			</th>
+					        			<th>通信IP</th>
+					        			<th>版本头部</th>
+					        			<th>商户名称</th>
+					        			<th>物联卡</th>
+					        			<th>是否入驻支付宝</th>
+					        			<th class="sort" ng-class="sort == 'created_at' ? 'sort-active':''" ng-click="list.sortList('created_at')" >
+					        				<span>添加时间</span>
+					        			</th>
+					        			<th>操作</th>
+					        		</tr>
+					        	</thead>
+					        	<tbody>
+					        		<tr ng-repeat="item in listData track by $index">
+					        			<td>{{item.id}}</td>
+					        			<td>{{item.client_name}}</td>
+					        			<td>{{item.client_sn}}</td>
+					        			<td>{{item.qr_code}}</td>
+					        			<td>{{item.start_number}}</td>
+					        			<td>{{item.province}}{{item.city}}{{item.district}}{{item.address}}</td>
+					        			<td>
+											<span class="text-danger" ng-if="item.connect <= 0 ">离线</span>
+											<i ng-if="item.connect > 0 && item.connect <= 10 " class="icon-singal icon-singal-1"></i>
+											<i ng-if="item.connect > 10 && item.connect <= 20" class="icon-singal icon-singal-3"></i>
+											<i ng-if="item.connect > 20 " class="icon-singal icon-singal-5"></i>
+										</td>
+					        			<td>{{item.ip}}</td>
+					        			<td>{{item.hardware}}</td>
+					        			<td>{{item.merchant_name}}</td>
+					        			<td>{{item.SIM}}</td>
+					        			<td>{{item.is_alipay}}</td>
+					        			<td>{{item.created_at}}</td>
+					        			<td>
+					        				<button class="btn btn-sm btn-white m-xs" type="button" ng-click="list.order($index)" tooltip-placement="left" tooltip="设备订单"><i class="fa fa-lg fa-th-list"></i></button>
+					        				<button class="btn btn-sm btn-white m-xs" type="button" ng-click="list.codeQr(item.id, 1)" tooltip-placement="left" tooltip="生成启动码"><i class="fa fa-lg fa-qrcode"></i></button>
+					        				<!-- <button class="btn btn-sm btn-white m-xs" type="button" ng-click="list.codeQr(item.id, 0)" tooltip-placement="left" tooltip="生成激活码"><i class="fa fa-lg fa-qrcode"></i></button> -->
+					        				<button class="btn btn-sm btn-white m-xs" type="button" ng-click="list.remoteUp(item.id)" tooltip-placement="left" tooltip="远程升级"><i class="fa fa-lg fa-level-up"></i></button>
+					        				<button class="btn btn-sm btn-white m-xs" type="button" ng-click="list.unBing(item.id)" tooltip-placement="left" tooltip="设备解绑"><i class="fa fa-lg fa fa-times-circle-o"></i></button>
+					        				<button class="btn btn-sm btn-white m-xs" type="button" ng-click="list.reset(item.id)" tooltip-placement="left" tooltip="设备重置"><i class="fa fa-lg fa fa-undo"></i></button>
+					        				<button class="btn btn-sm btn-white m-xs" type="button" ng-click="list.edit($index)" tooltip-placement="left" tooltip="编辑"><i class="fa fa-lg fa-edit"></i></button>
+					        			</td>
+					        		</tr>
+					        	</tbody>
+					        </table>
+						</div>
+					</div>
+				</tab>
+				<tab heading="待激活" ng-click="list.switch(0)">
+					<div class="tab-bd">
+						<div class="table-responsive">
+							<table class="table table-striped table-hover table-center">
+					        	<thead>
+					        		<tr>
+					        			<th class="sort" ng-class="sort == 'id' ? 'sort-active':''" ng-click="list.sortList('id')" >
+					        				<span>ID</span>
+					        			</th>
+					        			<th>设备名称</th>
+					        			<th>设备编码</th>
+					        			<th>启动码</th>
+					        			<th class="sort" ng-class="sort == 'start_number' ? 'sort-active':''" ng-click="list.sortList('start_number')" >
+					        				<span>启动次数</span>
+					        			</th>
+					        			<th>地址</th>
+					        			<th class="sort" ng-class="sort == 'connect' ? 'sort-active':''" ng-click="list.sortList('connect')" >
+					        				<span>信号强度</span>
+					        			</th>
+					        			<th>通信IP</th>
+					        			<th>版本头部</th>
+					        			<th>商户名称</th>
+					        			<th>物联卡</th>
+					        			<th>是否入驻支付宝</th>
+					        			<th class="sort" ng-class="sort == 'created_at' ? 'sort-active':''" ng-click="list.sortList('created_at')" >
+					        				<span>添加时间</span>
+					        			</th>
+					        			<th>操作</th>
+					        		</tr>
+					        	</thead>
+					        	<tbody>
+					        		<tr ng-repeat="item in listData track by $index">
+					        			<td>{{item.id}}</td>
+					        			<td>{{item.client_name}}</td>
+					        			<td>{{item.client_sn}}</td>
+					        			<td>{{item.qr_code}}</td>
+					        			<td>{{item.start_number}}</td>
+					        			<td>{{item.province}}{{item.city}}{{item.district}}{{item.address}}</td>
+					        			<td>
+											<span class="text-danger" ng-if="item.connect <= 0 ">离线</span>
+											<i ng-if="item.connect > 0 && item.connect <= 10 " class="icon-singal icon-singal-1"></i>
+											<i ng-if="item.connect > 10 && item.connect <= 20" class="icon-singal icon-singal-3"></i>
+											<i ng-if="item.connect > 20 " class="icon-singal icon-singal-5"></i>
+										</td>
+					        			<td>{{item.ip}}</td>
+					        			<td>{{item.hardware}}</td>
+					        			<td>{{item.merchant_name}}</td>
+					        			<td>{{item.SIM}}</td>
+					        			<td>{{item.is_alipay}}</td>
+					        			<td>{{item.created_at}}</td>
+					        			<td>
+					        				<button class="btn btn-sm btn-white m-xs" type="button" ng-click="list.order($index)" tooltip-placement="left" tooltip="设备订单"><i class="fa fa-lg fa-th-list"></i></button>
+					        				<button class="btn btn-sm btn-white m-xs" type="button" ng-click="list.codeQr(item.id, 1)" tooltip-placement="left" tooltip="生成启动码"><i class="fa fa-lg fa-qrcode"></i></button>
+					        				<!-- <button class="btn btn-sm btn-white m-xs" type="button" ng-click="list.codeQr(item.id, 0)" tooltip-placement="left" tooltip="生成激活码"><i class="fa fa-lg fa-qrcode"></i></button> -->
+					        				<button class="btn btn-sm btn-white m-xs" type="button" ng-click="list.reset(item.id)" tooltip-placement="left" tooltip="设备重置"><i class="fa fa-lg fa-undo"></i></button>
+					        				<button class="btn btn-sm btn-white m-xs" type="button" ng-click="list.remoteUp(item.id)" tooltip-placement="left" tooltip="远程升级"><i class="fa fa-lg fa-level-up"></i></button>
+					        				<button class="btn btn-sm btn-white m-xs" type="button" ng-click="list.edit($index)" tooltip-placement="left" tooltip="编辑"><i class="fa fa-lg fa-edit"></i></button>
+					        				<button class="btn btn-sm btn-white m-xs" type="button" ng-click="list.addLogistics(item.id)" tooltip-placement="left" tooltip="添加物流单号"><i class="fa fa-lg fa-plus-square-o"></i></button>
+					        				<button class="btn btn-sm btn-white m-xs" type="button" ng-click="list.logisticsMsg(item.id)" tooltip-placement="left" tooltip="查看物流信息"><i class="fa fa-lg fa-bus"></i></button>
+					        			</td>
+					        		</tr>
+					        	</tbody>
+					        </table>
+						</div>
+					</div>
+				</tab>
+			</tabset>
+			<div class="tabs-ft">
+				<div ng-if="!sum" class="tabs-ft-tips"></div>
+				<div class="tabs-pagination">
+					<pagination class="tabs-pagination-switch pagination-sm" ng-model="page" total-items="sum" items-per-page="len" max-size="max" boundary-links="true" first-text="首页" last-text="尾页" previous-text="上一页" next-text="下一页" ng-change="list.render(page)"></pagination>
+					<div class="tabs-pagination-sum">总数：{{sum}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div ng-if="showMask" class="backdrop" ng-click="list.closeSlider()"></div>
+	<div class="slidebar-r" ng-class="{'in': showOrder == true}">
+		<div ng-include="'views/template/client_order_slidebar.html'"></div>
+	</div>
+
+</section>

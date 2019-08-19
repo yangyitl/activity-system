@@ -1,0 +1,21 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse" full-scroll>
+        <ul side-navigation class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+            	<div class="nav-logo"></div>
+            </li>
+            <li ng-class="{active: $state.includes('{{label}}')}" ng-repeat="(label, item) in menus">
+                <a ng-href="{{item.subMenu?'':$state.href(item.parentStateName)}}">
+                	<i ng-class="item.parentIconClass"></i>
+                	<span class="nav-label">{{item.parentPageName}}</span>
+                	<span ng-if="item.subMenu" class="fa arrow"></span>
+                </a>
+                <ul ng-if="item.subMenu" class="nav nav-second-level" ng-class="{in: $state.includes('{{label}}')}">
+                    <li ng-class="{active: $state.includes('{{subItem.subStateName}}')}" ng-repeat="subItem in item.subMenu">
+                    	<a ng-href="{{$state.href(subItem.subStateName)}}">{{subItem.subPageName}}</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

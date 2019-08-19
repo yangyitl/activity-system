@@ -1,0 +1,76 @@
+.step-1 {
+  position: relative;
+  height: 100%;
+  background-color: #f7f7f7;
+}
+
+.step-1 .hd {
+  height: 3.5rem;
+}
+
+.step-1 .hd-case {
+  width: 100%;
+  height: 100%;
+}
+
+.step-1 .bd {
+  padding: .3rem;
+}
+
+.step-1 .bd .bd-cell {
+  position: relative;
+  margin-bottom: .3rem;
+  padding: .4rem .3rem;
+  background-color: #fff;
+  border-radius: .12rem;
+}
+
+.step-1 .bd .bd-cell:before {
+  display: none;
+}
+
+.step-1 .bd .bd-cell:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: .3rem;
+  width: .1rem;
+  height: .1rem;
+  margin-top: -.05rem;
+  border-width: .02rem .02rem 0 0;
+  border-color: #766f7c;
+  border-style: solid;
+  -webkit-transform:matrix(.71,.71,-.71,.71,0,0);
+          transform:matrix(.71,.71,-.71,.71,0,0);
+}
+
+.step-1 .bd-cell .weui-media-box__hd_in-appmsg {
+  width: .44rem;
+  height: .44rem;
+  margin-right: .3rem;
+  border-radius: 100%;
+}
+
+.step-1 .bd-cell .weui-media-box__title {
+  font-size: .34rem;
+  color: #574c5f;
+}
+
+.step-1 .bd-cell .weui-media-box__desc {
+  font-size: .26rem;
+}
+
+/* iPhone X/XS */
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+  .step-1 .weui-footer_fixed-bottom {
+    bottom: 1.5em;
+  }
+}
+
+/*iPhone XS Max*/
+@media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (-webkit-min-device-pixel-ratio: 3) {
+  .step-1 .weui-footer_fixed-bottom {
+    bottom: 1.5em;
+  }
+}
+

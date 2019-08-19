@@ -1,0 +1,110 @@
+<div class="inmodal">
+    <div class="modal-header">
+        <h6 class="modal-title">编辑服务商</h6>
+    </div>
+    <div class="modal-body p-sm">
+    	<form class="form-horizontal" role="form" name="addForm" novalidate>
+    		<div class="form-group">
+    			<label class="col-lg-2 control-label">名称</label>
+    			<div class="col-lg-9">
+                    <input class="form-control" type="text" name="name" ng-model="name"  placeholder="*请填写名称" required>
+                    <span class="help-block m-b-none text-danger" ng-show="addForm.name.$dirty && addForm.name.$invalid && addForm.name.$error.required">
+                        *不能为空
+                    </span>
+    			</div>
+    		</div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">账号</label>
+                <div class="col-lg-9">
+                    <input class="form-control bg-white" type="text" name="account" ng-model="account"  placeholder="*请填写账号(手机号)" ng-pattern="regPhone"  required readonly >
+                    <span class="help-block m-b-none text-danger" ng-show="addForm.account.$dirty && addForm.account.$invalid && (addForm.account.$error.pattern || addForm.account.$error.required ) ">
+                        *手机号格式错误
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">联系电话</label>
+                <div class="col-lg-9">
+                    <input class="form-control" type="text" name="phone" ng-model="phone"  placeholder="*请填写联系电话" ng-pattern="regAlltel"  required>
+                    <span class="help-block m-b-none text-danger" ng-show="addForm.phone.$dirty && addForm.phone.$invalid && (addForm.phone.$error.pattern || addForm.phone.$error.required ) ">
+                        *联系电话格式错误
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">密码</label>
+                <div class="col-lg-9">
+                    <input class="form-control" type="password" name="pass" placeholder="*请填写密码" ng-model="pass" ng-minlength="6" ng-maxlength="20" ng-pattern='regPass'>
+                    <span class="help-block m-b-none text-danger" ng-show="addForm.pass.$dirty && addForm.pass.$invalid && (addForm.pass.$error.pattern || addForm.pass.$error.required ) ">
+                        *格式错误，由6-20位字母、数字、点或下划线组成
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">确认密码</label>
+                <div class="col-lg-9">
+                    <input class="form-control" type="password" name="rpass" placeholder="*请填写密码" ng-model="rpass" ng-minlength="6" ng-maxlength="20" ng-pattern='regPass'>
+                    <span class="help-block m-b-none text-danger" ng-show="addForm.rpass.$dirty && addForm.rpass.$invalid && pass != rpass  ">
+                        *确认密码必须与密码一致
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">加盟费</label>
+                <div class="col-lg-9">
+                    <div class="input-group">
+                        <input class="form-control" type="text" name="league" ng-model="league"  placeholder="*请填写加盟费" ng-pattern="regMoney"  required>
+                        <span class="input-group-addon">元</span>
+                    </div>
+                    <span class="help-block m-b-none text-danger" ng-show="addForm.league.$dirty && addForm.league.$invalid && (addForm.league.$error.pattern || addForm.league.$error.required ) ">
+                        *仅支持两位小数点
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">设备单价</label>
+                <div class="col-lg-9">
+                    <div class="input-group">
+                        <input class="form-control" type="text" name="client_price" ng-model="client_price"  placeholder="*请填写设备单价" ng-pattern="regMoney"  required>
+                        <span class="input-group-addon">元</span>
+                    </div>
+                    <span class="help-block m-b-none text-danger" ng-show="addForm.client_price.$dirty && addForm.client_price.$invalid && (addForm.client_price.$error.pattern || addForm.client_price.$error.required ) ">
+                        *仅支持两位小数点
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">招商合伙人</label>
+                <div class="col-lg-9">
+                    <div class="selector block no-borders" >
+                        <select class="chosen-select" chosen width="'100%'" no-results-text="'无数据'" placeholder-text-single="'请选择招商合伙人'" ng-model="operate_id" ng-options="item.id as item.name for item in operatorData" >
+                            <option value=""></option>
+                     </select>
+                    </div>
+                    <span class="help-block m-b-none text-danger" ng-show="!operate_id">
+                        *请选择招商合伙人
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">所属地址</label>
+                <div class="col-lg-9">
+                    <div class="selector w-m">
+                        <select ng-model="province" ng-options="province.label for province in cityData" >
+                            <option value="">请选择省/市</option>
+                        </select>
+                    </div>
+                    <div class="selector w-m">
+                        <select ng-model="city" ng-options="city.label for city in province.children" ng-disabled="!province.children">
+                            <option value="">请选择市/区</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+    	</form>
+    </div>
+    <div class="modal-footer">
+    	<button type="button" class="btn btn-white" ng-click="cancel()" ng-disabled="wait">取消</button>
+        <button type="button" class="btn btn-primary ladda-button" ladda="wait" data-style="zoom-in" ng-click="ok()" ng-disabled="addForm.$invalid" >保存</button>
+    </div>
+</div>

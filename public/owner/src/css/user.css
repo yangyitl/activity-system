@@ -1,0 +1,13 @@
+.user {
+    background: #fff;
+}
+
+.logout-button {
+    margin: 2rem 20px;
+    background: #000;
+    border-radius: 20px;
+}
+
+.user-set {
+    color: #0d0d0d;
+}

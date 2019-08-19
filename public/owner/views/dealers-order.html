@@ -1,0 +1,53 @@
+<section class="order hide">
+    <div class="weui-tab" id="tab">
+        <div class="weui-navbar">
+            <div class="weui-navbar__item weui-navbar__item-l ">
+                <div>未审核<span id="submit" class="order-num">0</span></div>
+            </div>
+            <div class="weui-navbar__item weui-navbar__item-l ">
+                <div>待审核<span id="unSbu" class="order-num">0</span></div>
+            </div>
+            <div class="weui-navbar__item weui-navbar__item-r">
+                <div>已审核<span id="sbu" class="order-num">0</span></div>
+            </div>
+        </div>
+
+        <div class="weui-tab__panel padding-bot">
+            <div class="top-45p">
+                <div class="weui-navbar__item bgm-e weui-item-l">
+                    <div>姓名<span id="name" class="order-num">0</span></div>
+                </div>
+                <div class="weui-navbar__item bgm-e weui-item-l">
+                    <div>总瓶数<span id="totalNum" class="order-num">0</span></div>
+                </div>
+                <div class="weui-navbar__item  bgm-e">
+                    <div>总金额<span id="totalMon" class="order-num">0</span></div>
+                </div>
+            </div>
+            <div id="panel"></div>
+        </div>
+        <div class="radio-all">
+            <div class="dealers-p  left">
+                <div class="radio-all-in radio-po-l">
+                    <button class="sele-button"></button>
+                    <button class="all-button">全选</button>
+                </div>
+                <div class="radio-all-in radio-po-r">
+                    <label class="label-sum">合计:<span class="label-mon" id="sum">0.00元</span></label>
+                    <button class="dealers-button">提交审核</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="details hide">
+        <div class="details-message">
+            <span id="orderName"></span>
+            <span id="mobile"></span>
+        </div>
+        <!--<div class="details-addr"></div>-->
+        <div class="details-bot">
+            <!--<button class="details-bot-edit">修改地址</button>-->
+            <button class="details-bot-ca">取消</button>
+        </div>
+    </div>
+</section>

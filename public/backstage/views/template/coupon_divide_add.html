@@ -1,0 +1,52 @@
+<div class="inmodal">
+    <div class="modal-header">
+        <h6 class="modal-title">新增分成区间</h6>
+    </div>
+    <div class="modal-body">
+    	<form class="form-horizontal" novalidate name="addAD">
+    		<div class="form-group">
+    			<label class="col-md-3 control-label">最小值</label>
+    			<div class="col-md-9">
+					<div class="input-group ">
+						<input class="form-control" type="text" name="min" ng-model="min" ng-minlength="1" placeholder="请填写价格最小值，必填" ng-pattern="regNum" required>
+						<span class="input-group-addon">分</span>
+					</div>
+					<span class="help-block m-b-none text-danger" ng-show="addAD.min.$dirty && addAD.min.$invalid">
+						<small ng-show="addAD.min.$error.pattern">*只能输入整数</small>
+						<small ng-show="addAD.min.$error.required">*不能为空</small>
+					</span>
+    			</div>
+    		</div>
+			<div class="form-group">
+				<label class="col-md-3 control-label">最大值</label>
+				<div class="col-md-9">
+					<div class="input-group ">
+						<input class="form-control" type="text" name="max" ng-model="max" placeholder="请填写价格最大值，必填" ng-pattern="regNum"  required>
+						<span class="input-group-addon">分</span>
+					</div>
+					<span class="help-block m-b-none text-danger" ng-show="addAD.max.$dirty && addAD.max.$invalid">
+						<small ng-show="addAD.max.$error.pattern">*只能输入整数</small>
+						<small ng-show="addAD.max.$error.required">*不能为空</small>
+					</span>
+				</div>
+			</div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">服务商</label>
+                <div class="col-md-9">
+                    <div class="input-group ">
+                        <input class="form-control" type="text" name="total_fee" ng-model="total_fee" placeholder="请填写服务商分成，必填" ng-pattern="regNum"  required>
+                        <span class="input-group-addon">分</span>
+                    </div>
+                    <span class="help-block m-b-none text-danger" ng-show="addAD.total_fee.$dirty && addAD.total_fee.$invalid">
+                        <small ng-show="addAD.total_fee.$error.pattern">*只能输入整数</small>
+                        <small ng-show="addAD.total_fee.$error.required">*不能为空</small>
+                    </span>
+                </div>
+            </div>
+    	</form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-white" ng-disabled="wait" ng-click="close()">取消</button>
+        <button type="button" class="btn btn-primary ladda-button" ladda="wait" data-style="zoom-in" ng-disabled="addAD.$invalid"  ng-click="ok()" >保存</button>
+    </div>
+</div>

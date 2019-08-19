@@ -1,0 +1,22 @@
+.err {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background-color: #574e5f;
+}
+
+.err-icon {
+  width: 4.4rem;
+  height: 2.45rem;
+  margin: 2rem auto .4rem;
+  background: url('../img/bg-none.png') no-repeat center;
+  background-size: contain;
+}
+
+.err-msg {
+  padding: 0 1rem;
+  font-size: .28rem;
+  text-align: center;
+  word-wrap: break-word;
+  color: #fff;
+}

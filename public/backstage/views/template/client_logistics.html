@@ -1,0 +1,19 @@
+<div class="inmodal">
+    <div class="modal-header">
+        <h6 class="modal-title">物流信息</h6>
+    </div>
+    <div class="modal-body p-sm">
+        <div class="lodistics">
+            <ul>
+                <li ng-repeat="item in logisticsData track by $index">
+                    <div class="{{$index==0?'text-success':''}}">{{item.status}}</div>
+                    <div class="text-9 m-t-xs">{{item.time}}</div>
+                </li>
+            </ul>
+            <div ng-if="!logisticsData.length">暂无物流信息</div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ng-click="cancel()" >关闭</button>
+    </div>
+</div>

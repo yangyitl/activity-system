@@ -1,0 +1,78 @@
+.step-3 {
+  position: relative;
+  height: 100%;
+  background-color: #f7f7f7;
+}
+
+.step-3 .wrp {
+  padding: .3rem;
+}
+
+.step-3 .wrp-bd {
+  margin-top: 1.5rem;
+  background-color: #fff;
+  border-radius: .12rem;
+}
+
+.step-3 .wrp-bd .weui-form-preview__hd {
+  padding-top: .8rem;
+  font-size: .44rem;
+  text-align: center;
+  color: #54a548;
+}
+
+.step-3 .wrp-bd .wrp-bd-icon {
+  position: absolute;
+  top: -.6rem;
+  left: 50%;
+  font-size: 1rem;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.step-3 .wrp-bd .weui-form-preview__bd {
+  margin: .2rem 0;
+}
+
+.step-3 .wrp-bd .weui-form-preview__value {
+  color: #574c5f;
+}
+
+.step-3 .wrp-bd .wrp-bd-flex {
+  position: relative;
+  padding: .3rem .2rem;
+  overflow: hidden;
+}
+
+.step-3 .wrp-bd .wrp-bd-flex:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: .3rem;
+  width: 100%;
+  height: .01rem;
+  border-top: .01rem solid #d9d9d9;
+}
+
+.step-3 .wrp-bd .weui-flex__item {
+  padding: .1rem;
+  text-align: center;
+}
+
+.step-3 .wrp-bd .flex-btn {
+  display: block;
+  padding: 0 .28rem;
+  font-size: .3rem;
+  line-height:2.55555556;
+  color: #574c5f;
+  border-radius: .1rem;
+}
+
+.step-3 .wrp-bd .flex-btn.primary {
+  background-color: #f7e725;
+}
+
+.step-3 .wrp-bd .flex-btn.default {
+  background-color: #fff;
+  border: .01rem solid #f7e727;
+}

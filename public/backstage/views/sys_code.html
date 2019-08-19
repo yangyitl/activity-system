@@ -1,0 +1,26 @@
+<section class="wrapper wrapper-content animated fadeInRight" ng-controller="sysCodeCtrl">
+    <div class="row">
+        <div class="col-lg-6 col-md-8 col-lg-offset-3 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center p-h-sm">设置活动时间</div>
+                <div class="panel-body">
+                    <input class="form-control font-12 bg-white text-center" type="text" date-range-picker options="dateOption" ng-model="dateRange" placeholder="请设置活动时间" readonly>
+
+                    <!--<div class="row">-->
+                    <!--<div class="col-lg-12 text-center">-->
+                    <!--<button class="btn btn-sm btn-primary" ng-click="add()">获取二维码</button>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                </div>
+                <div class="text-center p-h-sm"><button class="btn btn-primary" ng-click="list.edit('time')" >提交</button></div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading text-center p-h-sm">设置库存</div>
+                <div class="panel-body">
+                    <input class="form-control font-12 bg-white text-center" type="text" ng-model="number" placeholder="设置库存">
+                </div>
+                <div class="text-center p-h-sm"><button class="btn btn-primary" ng-click="list.edit('num')" >提交</button></div>
+            </div>
+        </div>
+    </div>
+</section>

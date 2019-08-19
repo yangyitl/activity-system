@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" ng-app="zm">
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta http-equiv="Cache-Control" content="no-cache,no-store,no-siteapp,must-revalidate">
+	    <meta http-equiv="pragma" content="no-cache">
+	    <meta http-equiv="expires" content="0">
+	    <meta name="description" content="管理平台">
+		<meta name="keywords" content="">
+	    <!-- Page title set in pageTitle directive -->
+	    <title page-title></title>
+		<link rel="shortcut icon" href="src/img/favicon.ico">
+		<!-- Animate & Font awesome -->
+	    <link rel="stylesheet" href="src/fonts/awesome/css/font-awesome.min.css?v=18110801a">
+		<link rel="stylesheet" href="src/css/animate.css?v=18110801a">
+	    <!-- Bootstrap -->
+	    <link rel="stylesheet" href="src/css/plugins/bootstrap/bootstrap.min.css?v=18110801a">
+	    <!-- Notify & Sweetalert2 -->
+	    <link rel="stylesheet" href="src/css/plugins/notify/angular-notify.min.css?v=18110801a">
+    	<link rel="stylesheet" href="src/css/plugins/sweetalert/sweetalert2.min.css?v=18110801a">
+	    <!-- Main css -->
+	    <link id="loadBefore" rel="stylesheet" href="src/css/common.css?v=18110801a">
+	    <link rel="stylesheet" href="src/css/zm.css?v=18110801a">
+	</head>
+	<!-- ControllerAs syntax -->
+	<!-- Main controller with serveral data used in Inspinia theme on diferent view -->
+	<body class="fixed-sidebar fixed-nav fixed-nav-basic" id="page-top" landing-scrollspy ng-controller="MainCtrl as main">
+
+		<!-- Main view  -->
+		<div ui-view></div>
+
+		<!-- jQuery and Bootstrap -->
+		<script src="src/js/plugins/jquery/jquery.min.js?v=18110801a"></script>
+		<script src="src/js/plugins/jquery-ui/jquery-ui.min.js?v=18110801a"></script>
+		<script src="src/js/plugins/bootstrap/bootstrap.min.js?v=18110801a"></script>
+		<!-- Peace JS -->
+		<script src="src/js/plugins/pace/pace.min.js?v=18110801a"></script>
+		<!-- MetsiMenu -->
+		<script src="src/js/plugins/metisMenu/jquery.metisMenu.js?v=18110801a"></script>
+		<!-- SlimScroll -->
+		<script src="src/js/plugins/slimscroll/jquery.slimscroll.min.js?v=18110801a"></script>
+		<!-- Custom and plugin javascript -->
+		<script src="src/js/com/zm.js?v=18110801a"></script>
+		<!-- Main Angular scripts-->
+		<script src="src/js/angular/angular.min.js?v=18110801a"></script>
+		<script src="src/js/angular/angular-sanitize.js?v=18110801a"></script>
+		<script src="src/js/plugins/ui-router/angular-ui-router.min.js?v=18110801a"></script>
+		<script src="src/js/plugins/oclazyload/ocLazyLoad.min.js?v=18110801a"></script>
+		<script src="src/js/plugins/bootstrap/ui-bootstrap-tpls-0.12.0.min.js?v=18110801a"></script>
+		<script src="src/js/plugins/notify/angular-notify.min.js?v=18110801a"></script>
+		<script src="src/js/plugins/sweetalert/es6-promise.auto.js"></script>
+		<script src="src/js/plugins/sweetalert/sweetalert2.min.js?v=18110801a"></script>
+		<script src="src/js/plugins/sweetalert/ngSweetAlert2.min.js?v=18110801a"></script>
+		<!-- Anglar App Script -->
+		<script src="src/js/com/app.js?v=18110801"></script>
+		<script src="src/js/com/config.js?v=18110801"></script>
+		<script src="src/js/com/service.js?v=18110801"></script>
+		<script src="src/js/com/factory.js?v=18110801"></script>
+		<script src="src/js/com/directives.js?v=18110801"></script>
+		<script src="src/js/com/ctrls.js?v=18110801"></script>
+	</body>
+</html>

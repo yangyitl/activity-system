@@ -1,0 +1,180 @@
+.pass {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #fff;
+}
+
+.wrp {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.wrp-case {
+    width: 100%;
+}
+
+.wrp-bd {
+    width: 80%;
+    margin: 0 10%;
+    box-sizing: content-box;
+}
+
+
+.bd-form {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+
+.pass .wrp-bd .bd-form {
+    display: block;
+    margin-top: .3rem;
+    font-size: .32rem;
+    background-color: #fff;
+    border-radius: .12rem;
+}
+
+.pass .bd-form .form-location {
+    text-align: center;
+}
+
+.pass .bd-form .location-text {
+    position: relative;
+    display: inline-block;
+    padding: .2rem;
+    font-size: .28rem;
+    text-align: center;
+    color: #574c5f;
+}
+
+.pass .bd-form .location-text:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: .1rem;
+    height: .1rem;
+    margin-top: -.05rem;
+    border-width: .02rem .02rem 0 0;
+    border-color: #ff0000;
+    border-style: solid;
+    -webkit-transform: matrix(.71, .71, -.71, .71, 0, 0);
+    transform: matrix(.71, .71, -.71, .71, 0, 0);
+}
+
+.form-cells {
+    margin-bottom: .5rem;
+}
+
+
+.form-cell {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    padding: .1rem 0;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+}
+
+.pass .form-cells .form-cell:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: .01rem;
+
+}
+
+.user-mobile {
+    border-radius: .4rem;
+    border: 1px solid;
+    height: .8rem;
+}
+
+.pass .form-cells .form-cell-bd {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+.pass .form-cells .form-cell-bd .form-cell-input {
+    /*height: .8rem;*/
+    font-size: .3rem;
+    line-height: .8rem;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+.form-btn {
+    display: block;
+    background: #333333;
+    border-radius: 22px;
+    height: 44px;
+    min-width: 40%;
+    width: 3rem!important;
+    max-width: 50%;
+}
+
+
+.text-right {
+    text-align: right;
+}
+
+.pass-icon {
+    position: absolute;
+    left: .2rem;
+    top: .2rem;
+}
+
+.pass-account {
+    height: 100%;
+    width: 100%;
+    padding-left: .8rem;
+}
+
+.d-pass {
+    color: #888;
+    padding-right: .3rem;
+    font-size: .3rem;
+
+}
+
+.font-22 {
+    font-size: 14px;
+}
+
+.pass .weui-cells {
+    margin: 0;
+
+}
+
+.pass .weui-cells:before {
+    border-top: none;
+}
+
+.pass .weui-cells:after {
+    border-bottom: 1px solid #333;
+}
+
+.pass .weui-cell:before {
+    border: none;
+    border-bottom: 1px solid #333 !important;
+}
+
+.pass .weui-cells-pad {
+    padding-top: .5rem;
+}
+
+.pass .weui-input {
+    padding-left: .2rem;
+}
+
+.pass .weui-cell{
+    padding: 10px!important;
+}

@@ -1,0 +1,50 @@
+<section class="pass hide">
+    <div class="wrp hide">
+        <div class="wrp-bd">
+            <div class="bd-form">
+                <div class="form-cells">
+                    <div class="form-cell">
+                        <div class="form-cell-bd user-mobile">
+                            <img class="pass-icon" src="src/img/login/login-m.png"/>
+                            <label class="pass-account">
+                                <span class="form-cell-input">+86</span>
+                                <input class="form-cell-input" type="number" id="account" maxlength="11"
+                                       placeholder="请输入手机号"/>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-cell">
+                        <div class="form-cell-bd text-right user-mobile">
+                            <input class="form-cell-input" type="password" id="pass" minlength="6"
+                                   placeholder="请输入动态密码"/>
+                            <span class="d-pass">获取动态密码</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="weui-btn form-btn" id="onRegister">下一步</button>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <div class="weui-cells weui-cells-pad weui-cells_form font-22">
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">请输入当前密码</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" id="oldPass" type="text" placeholder="请输入当前密码">
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells weui-cells_form font-22">
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">确认新密码</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" id="newPass" type="text" placeholder="确认新密码">
+                </div>
+            </div>
+        </div>
+        <div class="weui-msg__text-area">
+            <p class="weui-msg__desc">必须是6-20个英文字母，数字或符号(空隔除外)，且字母，数字和标点符号至少包含两种</p>
+        </div>
+        <button class="weui-btn form-btn" id="onPass">下一步</button>
+    </div>
+</section>

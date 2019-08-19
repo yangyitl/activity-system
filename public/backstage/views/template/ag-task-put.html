@@ -1,0 +1,140 @@
+<div class="inmodal">
+    <div class="modal-header">
+        <h6 class="modal-title">广告投放</h6>
+    </div>
+    <div class="modal-body p-sm">
+    	<form class="form-horizontal" role="form" name="putForm" novalidate>
+    		<div class="form-group">
+    			<label class="col-lg-2 control-label">{{typeText || '公众号'}}</label>
+    			<div class="col-lg-5">
+    				<div class="selector block no-borders">
+    					<select class="chosen-select no-borders" name="app" chosen width="'100%'" no-results-text="'暂无可投放的{{typeText || '公众号'}}'" placeholder-text-single="'请选择需要投放的{{typeText || '公众号'}}'" ng-model="app" ng-options="item.id as item.app_name for item in apps" required>
+    						<option value=""></option>
+    					</select>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="form-group">
+    			<label class="col-lg-2 control-label">曝光广告</label>
+    			<div class="col-lg-5">
+    				<div class="selector block no-borders">
+    					<select class="chosen-select no-borders" name="exad" chosen width="'100%'" no-results-text="'暂无曝光广告'" placeholder-text-single="'可选择需要投放的曝光广告'" ng-model="exad" ng-options="item.id as item.app_name for item in exads" required>
+    						<option value=""></option>
+    					</select>
+    				</div>
+    				<small class="help-block text-danger" ng-show="!exads.length">*请先在系统菜单“曝光广告-广告链接”里面新增曝光广告</small>
+    				<small class="help-block text-muted" ng-show="exad">*曝光广告为用户领纸后跳转广告，按0.05元/次计费</small>
+    			</div>
+    		</div>
+    		<div class="form-group">
+    			<label class="col-lg-2 control-label">吸粉数量</label>
+    			<div class="col-lg-5">
+    				<input class="form-control" touch-spin spin-options="spinNum" type="text" name="fans" ng-model="fans" ng-minlength="3" ng-pattern="regNum" placeholder="请输入需要获取的粉丝数量" required>
+    				<small class="help-block text-danger" ng-show="putForm.fans.$dirty && putForm.fans.$invalid && (putForm.fans.$error.minlength || putForm.fans.$error.pattern || putForm.fans.$error.required)">
+    					*吸粉数量为不能小于100的整数
+    				</small>
+    			</div>
+    		</div>
+    		<div class="form-group">
+    			<label class="col-lg-2 control-label">投放单价</label>
+    			<div class="col-lg-5">
+    				<div class="input-group">
+    					<span class="input-group-addon">&yen;</span>
+    					<input class="form-control" type="text" name="price" ng-model="price" ng-minlength="1" ng-pattern="regPrice" placeholder="请输入获取单个粉丝的价格" required ng-change="checkPrice()">
+    				</div>
+    				<small class="help-block text-danger" ng-show="putForm.price.$dirty && putForm.price.$invalid && (putForm.price.$error.minlength || putForm.price.$error.pattern || putForm.price.$error.required) || !priceValid">
+    					*最小广告价格为{{mprice}}，仅支持两位小数点
+    				</small>
+    			</div>
+    		</div>
+    		<div class="form-group m-b-lg">
+    			<label class="col-lg-2 control-label">截止时间</label>
+    			<div class="col-lg-5">
+    				<div class="input-group">
+    					<input class="form-control bg-white" type="text" name="dateSet" date-range-picker options="dateOption" ng-model="dateSet" placeholder="请选择吸粉截止时间" readonly>
+    					<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="form-group" ng-show="app&&priceValid">
+    			<label class="col-lg-2 control-label">投放策略</label>
+    			<div class="col-lg-9">
+    				<div class="slide-panel">
+    					<div class="slide-panel-hd" ng-init="in" ng-class="in ? 'border-bottom' : ''" ng-click="in = !in">
+    						请选择投放策略（已选{{selectedTags.length}}个<span ng-show="countTotal">, 策略价格共计{{exTagsPrice}}元</span>）<i class="slide-icon fa" ng-class="in ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+    					</div>
+    					<div class="slide-panel-bd" ng-show="in">
+    						<div class="sk-spinner sk-spinner-three-bounce" ng-if="!tags">
+					            <div class="sk-bounce1"></div>
+					            <div class="sk-bounce2"></div>
+					            <div class="sk-bounce3"></div>
+					        </div>
+    						<div class="slide-block" ng-show="tags" ng-repeat="item in tags" ng-init="outIndex = $index">
+    							<p class="m-b-none">{{item.group}}</p>
+    							<p class="m-b-none">
+    								<label class="checkbox-inline p-l-n min-w-sm" ng-repeat="tag in item.tags">
+				    					<input icheck type="checkbox" name="tagbox" ng-model="$parent.chcekboxs[$index]" ng-change="pickTags(this, outIndex, $index)">
+				    					<span class="m-l-xs">{{tag.label}}</span>
+				    				</label>
+    							</p>
+    						</div>
+    						<div class="slide-bd-ft" ng-show="tags">
+	    						<button class="btn btn-sm btn-primary" ng-click="countPrice()" ng-disabled="!selectedTags.length">确认并计算</button>
+	    						<small>[已选{{selectedTags.length}}个<span ng-show="countTotal">, 策略价格共计{{exTagsPrice}}元，（实际投放价格=已填投放价格+已选策略价格）</span>]</small>
+	    						<small ng-show="counting">正在计算...</small>
+	    					</div>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="form-group" ng-show="app&&priceValid">
+    			<label class="col-lg-2 control-label">投放方案</label>
+    			<div class="col-lg-9">
+    				<label class="checkbox-inline p-l-n min-w-sm">
+    					<input icheck type="radio" name="case" ng-value="true" ng-model="allAreas" ng-change="allArea()"><span class="m-l-xs">全部场地</span>
+    				</label>
+    				<label class="checkbox-inline p-l-n min-w-sm">
+    					<input icheck type="radio" name="case" ng-value="false" ng-model="allAreas"><span class="m-l-xs">按区域</span>
+    				</label>
+    			</div>
+    		</div>
+    		<div class="form-group" ng-show="allAreas==false&&priceValid">
+    			<label class="col-lg-2 control-label">投放区域</label>
+    			<div class="col-lg-9">
+    				<div class="selector w-xm no-borders">
+    					<select class="chosen-select no-borders" name="province" chosen width="'100%'" placeholder-text-single="'请选择省/市'" ng-model="province" ng-options="province.label for province in citys" required>
+    						<option value=""></option>
+    					</select>
+    				</div>
+    				<div class="selector w-xm no-borders">
+    					<select class="chosen-select no-borders" name="city" chosen width="'100%'" placeholder-text-single="'请选择市'" ng-model="city" ng-options="city.label for city in province.children" ng-disabled="!province.children" required>
+    						<option value=""></option>
+    					</select>
+    				</div>
+    				<div class="selector w-xm no-borders">
+    					<select class="chosen-select no-borders" name="district" chosen width="'100%'" placeholder-text-single="'请选择区/县/镇'" ng-model="district" ng-options="district.label for district in city.children" ng-disabled="!city.children" required>
+    						<option value=""></option>
+    					</select>
+    					<button class="btn btn-primary" ng-click="areaPicker()" ng-disabled="!province">选择</button>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="form-group" ng-show="allAreas==false&&priceValid">
+    			<label class="col-lg-2 control-label">已选区域</label>
+    			<div class="col-lg-9">
+    				<div class="form-control-static">
+    					<span ng-if="!pickedArea.length" ng-hide="allAreas">无</span>
+    					<button ng-if="pickedArea.length" ng-show="!allAreas" class="btn btn-outline btn-primary p-tb-n m-r-sm m-b-xs" type="button" ng-repeat="item in pickedArea" ng-click="delSelected($index)">
+    						{{item.province + item.city + item.district}}
+    						<i class="fa fa-close m-l-s"></i>
+    					</button>
+    				</div>
+    			</div>
+    		</div>
+    	</form>
+    </div>
+    <div class="modal-footer">
+    	<button type="button" class="btn btn-white" ng-click="cancel()" ng-disabled="wait">取消</button>
+        <button type="button" class="btn btn-primary ladda-button" ladda="wait" data-style="zoom-in" ng-click="ok()" ng-disabled="!app||!fans||!price||price<mprice||!dateSet.startDate">{{btnText || '确认投放'}}</button>
+    </div>
+</div>

@@ -1,0 +1,80 @@
+<div class="inmodal">
+	<div class="modal-header">
+		<h6 class="modal-title">提现审核</h6>
+	</div>
+	<div class="modal-body">
+		<form class="form-horizontal" novalidate name="addService">
+			<div class="form-group" ng-if="type==0">
+				<label class="col-lg-3 control-label">微信头像</label>
+				<label class="col-lg-9 control-label text-left">
+					<img class="w-xs h-xs" ng-src="{{avatar}}" >
+				</label>
+			</div>
+			<div class="form-group" ng-if="type==0">
+				<label class="col-lg-3 control-label">微信昵称</label>
+				<label class="col-lg-9 control-label text-left">{{ nickname }}</label>
+			</div>
+			<div class="form-group" ng-if="type==1">
+				<label class="col-lg-3 control-label">持卡人</label>
+				<label class="col-lg-9 control-label text-left">{{ card.name }}</label>
+			</div>
+			<div class="form-group" ng-if="type==1">
+				<label class="col-lg-3 control-label">卡号</label>
+				<label class="col-lg-9 control-label text-left">{{ card.card }}</label>
+			</div>
+			<div class="form-group" ng-if="type==1">
+				<label class="col-lg-3 control-label">所属支行</label>
+				<label class="col-lg-9 control-label text-left">{{ card.branch }}</label>
+			</div>
+			<div class="form-group" >
+				<label class="col-lg-3 control-label">提现者名称</label>
+				<label class="col-lg-9 control-label text-left">{{ role_name }}</label>
+			</div>
+			<div class="form-group">
+				<label class="col-lg-3 control-label">提现前余额</label>
+				<label class="col-lg-9 control-label text-left">{{ old_balance }}</label>
+			</div>
+			<div class="form-group">
+				<label class="col-lg-3 control-label">提现余额</label>
+				<label class="col-lg-9 control-label text-left">{{apply_money}}</label>
+			</div>
+			<div class="form-group">
+				<label class="col-lg-3 control-label">手续费</label>
+				<label class="col-lg-9 control-label text-left">{{commission_charge}}</label>
+			</div>
+			<div  class="form-group">
+				<label class="col-lg-3 control-label">实际到账</label>
+				<label class="col-lg-9 control-label text-left">{{actual_money}}</label>
+			</div>
+			<div class="form-group">
+				<label class="col-lg-3 control-label">提现后余额</label>
+				<label class="col-lg-9 control-label text-left">{{ new_balance }}</label>
+			</div>
+			<div  class="form-group">
+				<label class="col-lg-3 control-label">提现时间</label>
+				<label class="col-lg-9 control-label text-left">{{created_at}}</label>
+			</div>
+			<div class="form-group">
+				<label class="col-lg-3 control-label">审核状态</label>
+				<div class="col-lg-9">
+					<label class="checkbox-inline p-l-n">
+						<input type="radio" icheck ng-value=1 ng-model="status" name="status"> 通过
+					</label>
+					<label class="checkbox-inline">
+						<input type="radio" icheck ng-value=2 ng-model="status" name="status"> 不通过
+					</label>
+				</div>
+			</div>
+			<div ng-show="status==2" class="form-group">
+				<label class="col-lg-3 control-label">原因</label>
+				<div class="col-lg-9">
+					<input class="form-control" type="text" name="remark" ng-model="remark">
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-white" ng-click="cancel()">取消</button>
+		<button type="button" class="btn btn-primary" ng-click="ok()">保存</button>
+	</div>
+</div>

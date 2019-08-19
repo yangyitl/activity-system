@@ -1,0 +1,56 @@
+.order-mgr {
+    position: relative;
+    height: 100%;
+    font-size: 15px;
+    background-color: #f8f8f8;
+}
+
+.order-mgr .w-100p {
+    width: 100%;
+    padding: 2% 5%;
+    box-sizing: border-box;
+
+}
+
+.order-mgr .mgr-block {
+    display: block;
+    background: #fff;
+    margin: 3% 7%;
+    border-radius: 10px;
+}
+
+.order-mgr .order-tip {
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+.order-mgr .order-time {
+    font-size: 13px;
+    color: #333333;
+}
+
+.order-mgr .order-bot {
+    border: none;
+    background: #222;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 5px;
+}
+
+.order-mgr .weui-cell:before {
+    border: none !important;
+}
+
+
+.order-mgr .weui-cell {
+    padding: 0 15px;
+}
+
+.order-mgr .item-time {
+    padding-bottom: 8px;
+}
+
+.order-mgr .item-top {
+    padding-top: 8px;
+}

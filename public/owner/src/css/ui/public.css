@@ -1,0 +1,369 @@
+/* ****************
+ * iconfont
+ * ****************/
+
+
+/* ****************
+ * init
+ * ****************/
+* {
+    outline: none;
+    -webkit-overflow-scrolling: touch;
+    -webkit-appearance: none;
+}
+
+html,
+body {
+    position: relative;
+    height: 100%;
+    margin: 0;
+    font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+    /*font-family: "Microsoft JhengHei", "Microsoft YaHei";
+    vertical-align: baseline;*/
+    background-color: #f7f7f7;
+}
+
+@media (min-width: 320px) {
+    html {
+        font-size: 42.6667px;
+    }
+}
+
+@media (min-width: 360px) {
+    html {
+        font-size: 48px;
+    }
+}
+
+@media (min-width: 375px) {
+    html {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 384px) {
+    html {
+        font-size: 51.2px;
+    }
+}
+
+@media (min-width: 414px) {
+    html {
+        font-size: 55.2px;
+    }
+}
+
+@media (min-width: 448px) {
+    html {
+        font-size: 59.7333px;
+    }
+}
+
+@media (min-width: 480px) {
+    html {
+        font-size: 48px;
+    }
+}
+
+@media (min-width: 512px) {
+    html {
+        font-size: 68.2667px;
+    }
+}
+
+@media (min-width: 544px) {
+    html {
+        font-size: 72.5333px;
+    }
+}
+
+@media (min-width: 576px) {
+    html {
+        font-size: 76.8px;
+    }
+}
+
+@media (min-width: 608px) {
+    html {
+        font-size: 81.0667px;
+    }
+}
+
+@media (min-width: 640px) {
+    html {
+        font-size: 85.3333px;
+    }
+}
+
+@media (min-width: 750px) {
+    html {
+        font-size: 100px;
+    }
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+ol,
+ul,
+li {
+    list-style: none;
+}
+
+p {
+    margin: 5px 0;
+    padding: 5px;
+}
+
+i,
+em,
+span {
+    font-style: normal;
+}
+
+small {
+    font-size: 12px;
+}
+
+input {
+    border: 0;
+    border-radius: 6px;
+}
+
+
+/* ****************
+ * cover weui
+ * ****************/
+.weui-loading_toast {
+    font-size: 16px;
+}
+
+.weui-loadmore_line .weui-loadmore__tips {
+    font-size: 16px;
+    background-color: #fff;
+}
+
+.weui-picker__content .weui-picker__item {
+    font-size: 16px;
+}
+
+.weui-btn-area {
+    margin-top: .5rem;
+}
+
+.weui-btn:after {
+    display: none;
+}
+
+.weui-btn_primary:not(.weui-btn_disabled):active {
+    color: rgba(51, 51, 51, .6);
+    background-color: rgba(255, 209, 2, .6);
+}
+
+
+/* ****************
+ * common
+ * ****************/
+.view {
+    position: relative;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* block */
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+/* margin & padding */
+.m-s {
+    margin-right: .05rem;
+}
+
+.m-lr-s {
+    margin-left: .05rem;
+    margin-right: .05rem;
+}
+
+/* flex */
+.flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    flex-flow: row nowrap;
+}
+
+.flex-item {
+    -webkit-box-flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+/* loader */
+.loader {
+    position: absolute;
+    top: calc(50% - 1.25em);
+    left: calc(50% - 1.25em);
+    width: 2.5em;
+    height: 2.5em;
+    font-size: 16px;
+    -webkit-transform: rotate(165deg);
+    transform: rotate(165deg);
+}
+
+.loader:before,
+.loader:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 0.25em;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.loader:before {
+    -webkit-animation: before 2s infinite;
+    animation: before 2s infinite;
+}
+
+.loader:after {
+    -webkit-animation: after 2s infinite;
+    animation: after 2s infinite;
+}
+
+.loader .loader-text {
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    font-size: 14px;
+    color: #fff;
+    word-break: keep-all;
+    -webkit-transform: translateX(-35%) rotate(-165deg);
+    transform: translateX(-35%) rotate(-165deg);
+}
+
+@keyframes before {
+    0% {
+        width: 0.5em;
+        box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+    }
+    35% {
+        width: 2.5em;
+        box-shadow: 0 -0.5em rgba(225, 20, 98, 0.75), 0 0.5em rgba(111, 202, 220, 0.75);
+    }
+    70% {
+        width: 0.5em;
+        box-shadow: -1em -0.5em rgba(225, 20, 98, 0.75), 1em 0.5em rgba(111, 202, 220, 0.75);
+    }
+    100% {
+        box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+    }
+}
+
+@keyframes after {
+    0% {
+        height: 0.5em;
+        box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+    }
+    35% {
+        height: 2.5em;
+        box-shadow: 0.5em 0 rgba(61, 184, 143, 0.75), -0.5em 0 rgba(233, 169, 32, 0.75);
+    }
+    70% {
+        height: 0.5em;
+        box-shadow: 0.5em -1em rgba(61, 184, 143, 0.75), -0.5em 1em rgba(233, 169, 32, 0.75);
+    }
+    100% {
+        box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+    }
+}
+
+.weui-tabbar {
+    background: #fff;
+    height: 40px;
+}
+
+
+.weui-tabbar__label {
+    margin: 0;
+}
+
+.weui-loadmore-index {
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    height: 100%;
+    left: 0;
+    margin: 0;
+}
+
+.loading-index {
+    position: relative;
+    top: 40%;
+}
+
+.weui-toast {
+    margin: 0;
+}
+
+.weui-picker-modal {
+    height: 250px !important;
+}
+
+.toolbar, .toolbar .title {
+    font-size: 15px;
+}
+
+.toolbar .toolbar-inner {
+    height: 30px;
+
+}
+
+.toolbar .picker-button {
+    height: 30px;
+    line-height: 30px;
+}
+
+.toolbar .title {
+    line-height: 30px;
+}
+
+.weui-picker-modal .picker-items {
+    font-size: 15px !important;
+}
+
+.weui-picker-modal .picker-modal-inner {
+    height: 200px;
+    text-align: center;
+}
+
+.all_loading{
+    top: 0%!important;
+    line-height: 1.6em;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 9999;
+    padding: 50% 0;
+    margin: 0;
+    background: rgba(200, 200, 200, .35);
+    box-sizing: border-box;
+}

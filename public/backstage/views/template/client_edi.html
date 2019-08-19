@@ -1,0 +1,58 @@
+<div class="inmodal">
+    <div class="modal-header">
+        <h6 class="modal-title">编辑设备信息</h6>
+    </div>
+    <div class="modal-body p-sm">
+    	<form class="form-horizontal" role="form" name="" novalidate>
+    		<div class="form-group">
+    			<label class="col-lg-2 control-label">设备名称</label>
+    			<div class="col-lg-9">
+                    <input class="form-control" type="text" name="client_name" ng-model="client_name"  placeholder="*请填写设备名称" required>
+                    <span class="help-block m-b-none text-danger" ng-show="editForm.client_name.$dirty && editForm.client_name.$invalid && editForm.client_name.$error.required">
+                        *不能为空
+                    </span>
+    			</div>
+    		</div>
+    		<div class="form-group">
+                <label class="col-lg-2 control-label">设备编码</label>
+                <div class="col-lg-9">
+                    <input class="form-control" type="text" name="client_sn" ng-model="client_sn"  placeholder="*请填写设备编码" maxlength="16" ng-pattern="/^[0-9]{15,16}$/"  required>
+                    <span class="help-block m-b-none text-danger" ng-show="editForm.client_sn.$dirty && editForm.client_sn.$invalid && (editForm.client_sn.$error.pattern || editForm.client_sn.$error.required)">
+                        *只能输入整数，并且长度不能小于15位
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">启动码</label>
+                <div class="col-lg-9">
+                    <input class="form-control" type="text" name="qr_code" ng-model="qr_code"  placeholder="*请填写设备启动码" ng-pattern="/^([a-z]|[A-Z]|[0-9]){10}$/"  required>
+                    <span class="help-block m-b-none text-danger" ng-show="editForm.qr_code.$dirty && editForm.qr_code.$invalid && (editForm.qr_code.$error.pattern || editForm.qr_code.$error.required)">
+                        *由字母和数字组成，并且长度为10位
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">物联卡</label>
+                <div class="col-lg-9">
+                    <input class="form-control" type="text" name="SIM" ng-model="SIM"  placeholder="*请填写物联卡" ng-pattern="/^([a-z]|[A-Z]|[0-9]){11,20}$/"  required>
+                    <span class="help-block m-b-none text-danger" ng-show="editForm.SIM.$dirty && editForm.SIM.$invalid && (editForm.SIM.$error.pattern || editForm.SIM.$error.required)">
+                        *不能为空
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">启动次数</label>
+                <div class="col-lg-9">
+                    <input class="form-control" type="text" name="start_number" ng-model="start_number"  placeholder="*请填写设备启动次数" ng-pattern="/^[0-9]{1,}$/"  required>
+                    <span class="help-block m-b-none text-danger" ng-show="editForm.start_number.$dirty && start_number.start_number.$invalid && (editForm.start_number.$error.pattern || editForm.start_number.$error.required)">
+                        *不能为空且只能输入整数
+                    </span>
+                </div>
+            </div>
+    	</form>
+    </div>
+    <div class="modal-footer">
+    	<button type="button" class="btn btn-white" ng-click="cancel()" ng-disabled="wait">取消</button>
+        <button type="button" class="btn btn-primary ladda-button" ladda="wait" data-style="zoom-in" ng-click="ok()" >保存</button>
+    </div>
+</div>

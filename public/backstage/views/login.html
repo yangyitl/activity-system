@@ -1,0 +1,34 @@
+<section class="login-wrp" ng-style="bg" ng-controller="loginCtrl">
+	<div class="login-mask">
+		<div class="login">
+			<div class="login-logo animated fadeInDown"></div>
+			<!-- logon -->
+			<form class="animated fadeInDown" novalidate name="onForm" role="form" ng-hide="showFg||showRg" ng-submit="login.on()">
+				<div class="login-cells">
+					<div class="login-cell">
+						<input  type="text" name="account" placeholder="手机号码" ng-model="account" ng-minlength="11" ng-maxlength="11" ng-pattern="regAccount">
+						<small class="login-cell-err" ng-show="onForm.account.$dirty&&onForm.account.$invalid&&(onForm.account.$error.minlength||onForm.account.$error.maxlength||onForm.account.$error.pattern)">
+							格式错误，手机号应为11位数字
+						</small>
+					</div>
+					<div class="login-cell">
+						<input type="password" name="pass" placeholder="密码" ng-model="pass" ng-minlength="6" ng-maxlength="20" ng-pattern='regPass'>
+						<small class="login-cell-err" ng-show="onForm.pass.$dirty&&onForm.pass.$invalid&&(onForm.pass.$error.minlength||onForm.pass.$error.maxlength||onForm.pass.$error.pattern)">
+							格式错误，由6-20位字母、数字、点或下划线组成
+						</small>
+					</div>
+					<div class="login-cell">
+						<input type="text" name="code" placeholder="验证码" ng-model="code" ng-minlength="6" ng-maxlength="6" ng-pattern='regNum'>
+						<v-code class="login-btn-vcode" type="code" ng-model="vcode">{{vcode}}</v-code>
+						<small class="login-cell-err" ng-show="regForm.code.$dirty&&regForm.code.$invalid&&(regForm.code.$error.minlength||regForm.code.$error.maxlength||regForm.code.$error.pattern)">
+							格式错误，由6位字母、数字组成
+						</small>
+					</div>
+				</div>
+				<div class="login-btns">
+					<button type="submit" class="btn btn-block login-btn" ng-disabled="onForm.$invalid">登录</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,49 @@
+<div class="inmodal">
+    <div class="modal-header">
+        <h6 class="modal-title">{{dName}}&nbsp;-&nbsp;吸粉详情</h6>
+    </div>
+    <div class="modal-body p-sm">
+    	<div class="row tabs-container table-list">
+			<div class="col-lg-12">
+				<div slim-scroll box-height="500px" class="relativer">
+					<div class="table-responsive">
+						<table class="table table-striped table-hover text-center">
+				        	<thead>
+				        		<tr>
+				        			<th class="text-center">昵称</th>
+				        			<th class="text-center">头像</th>
+				        			<th class="text-center">粉丝来源</th>
+				        			<th class="text-center">扣费金额（元）</th>
+				        			<th class="text-center">交易单号</th>
+				        			<th class="text-center">交易时间</th>
+				        		</tr>
+				        	</thead>
+				        	<tbody>
+				        		<tr ng-repeat="item in dData">
+				        			<td>{{item.nickname}}</td>
+				        			<td><img img-view class="img-sm img-rounded cursor" ng-src="{{item.headimgurl}}"></td>
+				        			<td>{{item.client_province + item.client_city}}</td>
+				        			<td>{{item.total_fee}}</td>
+				        			<td>{{item.trade_sn}}</td>
+				        			<td>{{item.created_at}}</td>
+				        		</tr>
+				        	</tbody>
+				        </table>
+					</div>
+					<span ng-if="dData.length == 0" class="relativer-child"><i class="fa fa-frown-o m-r-xs"></i>暂无数据</span>
+				</div>
+			</div>
+			<div class="col-lg-12">
+				<div class="tabs-ft p-b-none">
+					<div class="tabs-pagination">
+						<pagination class="tabs-pagination-switch pagination-sm" ng-model="dPage" total-items="dSum" items-per-page="dLen" max-size="dMax" boundary-links="true" first-text="首页" last-text="尾页" previous-text="上一页" next-text="下一页" ng-change="page(dPage)"></pagination>
+						<div class="tabs-pagination-sum">总数：{{dSum}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ng-click="close()">关闭</button>
+    </div>
+</div>

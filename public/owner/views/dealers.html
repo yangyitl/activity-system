@@ -1,0 +1,50 @@
+<section class="dealers-order hide" id="dealers">
+    <div class="weui-tab" id="tab">
+        <div class="weui-search-bar" id="searchBar">
+            <form class="weui-search-bar__form">
+                <div class="weui-search-bar__box">
+                    <i class="weui-icon-search"></i>
+                    <input type="text" class="weui-search-bar__input" id="searchInput" placeholder="姓名搜索"
+                           required="">
+                    <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+                </div>
+                <label class="weui-search-bar__label" id="searchText">
+                    <i class="weui-icon-search"></i>
+                    <span>姓名|手机号搜索</span>
+                </label>
+            </form>
+            <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+        </div>
+        <div class="weui-tab__panel">
+            <table class="list-table" border="0" >
+                <tbody>
+                <tr class="list-tr-top">
+                    <th></th>
+                    <th>姓名</th>
+                    <th>手机号码</th>
+                    <th>未审核</th>
+                    <th>提交待审</th>
+                    <th>已审核</th>
+                </tr>
+                </tbody>
+                <tfoot id="panel">
+
+                </tfoot>
+            </table>
+            <div class="w-100p" id="more">
+
+            </div>
+        </div>
+        <div class="radio-all">
+            <div class="dealers-p left">
+                <div class="radio-all-in radio-po-l">
+                    <button class="sele-button"></button>
+                    <button class="all-button">全选</button>
+                </div>
+                <div class="radio-all-in radio-po-r">
+                    <button class="dealers-button">提交订单</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

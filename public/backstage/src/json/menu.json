@@ -1,0 +1,49 @@
+{
+	"dashboards": {
+		"parentIconClass": "fa fa-th-large",
+		"parentPageName": "平台概览",
+		"parentStateName": "dashboards.board",
+		"subMenu": ""
+	},
+
+	"user": {
+		"parentIconClass": "fa fa-user",
+		"parentPageName": "用户管理",
+		"subMenu": [
+			{
+			"subPageName": "用户列表",
+			"subStateName": "user.list"
+			}
+		]
+	},
+
+	"finance": {
+		"parentIconClass": "fa fa-rmb",
+		"parentPageName": "财务管理",
+		"subMenu": [
+			{
+			"subPageName": "订单列表",
+			"subStateName": "finance.order"
+            }
+        ]
+	},
+
+	"sys": {
+		"parentIconClass": "fa fa-gears",
+		"parentPageName": "系统设置",
+		"subMenu": [
+            {
+			"subPageName": "商品规格",
+			"subStateName": "sys.set"
+            },
+			{
+				"subPageName": "活动设置",
+				"subStateName": "sys.code"
+			},
+			{
+				"subPageName": "数据库备份",
+				"subStateName": "sys.dbBackUp"
+			}
+        ]
+	}
+}
