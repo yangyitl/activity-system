@@ -757,3 +757,20 @@ typeof window !== 'undefined' && window.Yqd ? window.YQD = window.Yqd : null;
 // 注册全局yqd方便使用，也可以通过构造函数单独实例化Yqd, 如：var yqd = new Yqd;/var yqd = new YQD;
 typeof window !== 'undefined' && window.Yqd ? window.yqd = new Yqd : null;
 yqd.init();
+
+yqd.request({
+    loader: '站点配置',
+    type: 'POST',
+    url: 'site/config',
+    data: {},
+    ok: function (json) {
+        if (json.status == 200) {
+            var data = json.data;
+            goods_name = data.goods.goods_name;
+            goods_price = data.goods.goods_price;
+            if ($("#goods-name").length > 0) {
+                $("#goods-name").html(goods_name);
+            }
+        }
+    }
+})

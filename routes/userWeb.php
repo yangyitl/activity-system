@@ -22,6 +22,9 @@ $router->group(['prefix' => USE_PREFIX, 'namespace' => 'User', 'middleware' => '
         $router->post('forgot', ['as' => 'useForgot', 'uses' => 'LoginController@forgot']);
         //检查
         $router->post('check/login', ['uses' => 'LoginController@check']);
+
+        //系统配置
+        $router->post('site/config', ['uses' => 'SiteController@config']);
     });
 /**
  * 中间件过滤

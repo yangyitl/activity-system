@@ -201,3 +201,9 @@ $(".text-input").on('change', function () {
     check();
 });
 
+if ($("#goods-name").length > 0) {
+    $("#goods-name").html(goods_name);
+}
+if ($("#goods_price").length > 0) {
+    $("#goods_price").html(goods_price);
+}

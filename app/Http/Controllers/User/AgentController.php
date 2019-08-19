@@ -120,6 +120,7 @@ class AgentController extends BasisController
 
     public static function submit()
     {
+        $goodsConfig = array_shift(config('goods'));
         $message = [
             'required' => ':attribute不能为空。',
         ];
@@ -186,7 +187,7 @@ class AgentController extends BasisController
                     }
                 }
                 $orderNum = count($orders);
-                $orderTotal = $orderSum ? $orderSum * 19.9 : 0;
+                $orderTotal = $orderSum ? $orderSum * $goodsConfig['goods_price'] : 0;
                 $total += $orderTotal;
                 $number += $orderNum;
                 $sum += $orderSum;

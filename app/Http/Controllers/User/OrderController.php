@@ -63,6 +63,9 @@ class OrderController extends BasisController
         $number = $number['number'];
         $sn = date('YmdHis') . self::$userId . rand(100, 999);
         $city = explode(' ', self::$parameter->city);
+        $goodsConfig = array_shift(config('goods'));
+        $goodsPrice = $goodsConfig['goods_price'];
+        $goodsPriceUnit = $goodsPrice * 100;
         $add = [
             'order_sn' => $sn,
             'start_id' => self::$userId,
@@ -78,9 +81,10 @@ class OrderController extends BasisController
             'province' => isset($city[0]) ? $city[0] : '',
             'city' => isset($city[1]) ? $city[1] : '',
             'area' => isset($city[2]) ? $city[2] : '',
-            'price' => 1990,
+            'goods_name' => $goodsConfig['goods_name'],
+            'price' => $goodsPriceUnit,
             'status' => 0,
-            'total_amount' => $number * 1990,
+            'total_amount' => $number * $goodsPriceUnit,
             'address' => self::$parameter->addr,
             'add_time' => time(),
             'updated_at' => date('Y-m-d H:i:s'),
@@ -413,6 +417,7 @@ class OrderController extends BasisController
      */
     public static function allSubmit()
     {
+        $goodsConfig = array_shift(config('goods'));
         $message = [
             'required' => ':attribute不能为空。',
         ];
@@ -478,7 +483,7 @@ class OrderController extends BasisController
             }
         }
         $number = count($orders);
-        $total = $sum ? $sum * 19.9 : 0;
+        $total = $sum ? $sum * $goodsConfig['goods_price'] : 0;
         if ($number) {
             self::addLog(self::$userId, self::$pid, $sum, $number, $total, '提交审核', 0);
         }

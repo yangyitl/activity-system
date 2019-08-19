@@ -39,6 +39,7 @@ var order = {
                 }
                 var totalAmount = e.total_amount / 100,
                     listTop = '';
+                var priceUnit = e.price / 100;
                 __thisData.sort = __thisData.sort + 1;
                 if (i != 0 || __thisData.p != 1) {
                     listTop = 'list-top';
@@ -71,10 +72,10 @@ var order = {
                     + '</button>'
                     + '</div></div>'
                     + '<div class="weui-cell">'
-                    + '<div class="weui-cell__bd">纪莱熙|纪莱熙轻透美肌隔离防护喷雾</div>'
-                    + '<div class="weui-cell__ft">¥19.9</div></div>'
+                    + '<div class="weui-cell__bd">' + e.goods_name + '</div>'
+                    + '<div class="weui-cell__ft">¥' + priceUnit + '</div></div>'
                     + '<div class="weui-cell">'
-                    + '<div class="weui-cell__bd">纪莱熙|纪莱熙轻透美肌隔离防护喷雾</div>'
+                    + '<div class="weui-cell__bd">' + e.goods_name + '</div>'
                     + '<div class="weui-cell__ft">'
                     + '<div>x' + e.number + '</div>'
                     + '<div>实付：<span class="sum">' + totalAmount + '</span></div>'

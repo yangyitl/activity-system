@@ -105,6 +105,8 @@ $app->register(App\Providers\EventServiceProvider::class);
 |
 */
 
+$app->configure('goods');
+
 $app->router->group([
     'namespace' => 'App\Http\Controllers',
 ], function ($router) {
