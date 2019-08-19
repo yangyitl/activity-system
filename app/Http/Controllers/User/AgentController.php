@@ -120,7 +120,8 @@ class AgentController extends BasisController
 
     public static function submit()
     {
-        $goodsConfig = array_shift(config('goods'));
+        $goodsConfig = config('goods');
+        $goodsConfig = array_shift($goodsConfig);
         $message = [
             'required' => ':attribute不能为空。',
         ];

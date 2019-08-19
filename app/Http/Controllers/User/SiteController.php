@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\User;
 
-class SiteController extends BasisController
+use App\Http\Controllers\Controller;
+
+class SiteController extends Controller
 {
 
     public static function config()

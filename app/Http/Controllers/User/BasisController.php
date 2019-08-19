@@ -20,7 +20,10 @@ class BasisController extends Controller
     public function __construct(Request $request)
     {
         parent::__construct($request);
-        $cache = Cache::get($_COOKIE['UserCookie']);
+        $cache = false;
+        if (isset($_COOKIE['UserCookie'])) {
+            $cache = Cache::get($_COOKIE['UserCookie']);
+        }
         if ($cache) {
             self::$userId = $cache->userId;
 

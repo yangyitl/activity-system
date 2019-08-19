@@ -63,7 +63,8 @@ class OrderController extends BasisController
         $number = $number['number'];
         $sn = date('YmdHis') . self::$userId . rand(100, 999);
         $city = explode(' ', self::$parameter->city);
-        $goodsConfig = array_shift(config('goods'));
+        $goodsConfig = config('goods');
+        $goodsConfig = array_shift($goodsConfig);
         $goodsPrice = $goodsConfig['goods_price'];
         $goodsPriceUnit = $goodsPrice * 100;
         $add = [
@@ -417,7 +418,8 @@ class OrderController extends BasisController
      */
     public static function allSubmit()
     {
-        $goodsConfig = array_shift(config('goods'));
+        $goodsConfig = config('goods');
+        $goodsConfig = array_shift($goodsConfig);
         $message = [
             'required' => ':attribute不能为空。',
         ];
