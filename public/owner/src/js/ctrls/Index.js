@@ -75,7 +75,7 @@ var home = {
 
     clip: function () {
         yqd.queryAt('.cp-botton', 'click', function () {
-            var clipboard = new ClipboardJS("#agree",);
+            var clipboard = new ClipboardJS("#agree");
             clipboard.on('success', function (e) {
                 if (e.text) console.log('copy ok');
                 $.toast('复制成功', function () {
