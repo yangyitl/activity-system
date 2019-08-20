@@ -663,12 +663,11 @@ class OrderController extends BasisController
 
         foreach ($configs as $blackList)
         {
-            $hit = false;
+            $hit = true;
             foreach ($blackList as $blackAddress) {
                 if (stripos($address, $blackAddress) === false) {
+                    $hit = false;
                     break;
-                } else {
-                    $hit = true;
                 }
             }
 
