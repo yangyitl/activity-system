@@ -52,10 +52,10 @@ var home = {
                 return;
             }
 
-            if (!name || !yqd.regEx('NAME', name)) {
-                $.toast('请填写真实姓名', "text");
-                return;
-            }
+            // if (!name || !yqd.regEx('NAME', name)) {
+            //     $.toast('请填写真实姓名', "text");
+            //     return;
+            // }
             $(this).addClass('addStatus');
             yqd.request({
                 type: 'POST',

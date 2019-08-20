@@ -85,10 +85,10 @@ yqd.queryAt('.add-button', 'click', function () {
         return;
     }
 
-    if (!name || !yqd.regEx('NAME', name)) {
-        $.toast('请填写真实姓名', "cancel");
-        return;
-    }
+    // if (!name || !yqd.regEx('NAME', name)) {
+    //     $.toast('请填写真实姓名', "cancel");
+    //     return;
+    // }
 
     if (!num || !yqd.regEx('NUM', num)) {
         $.toast('请填写购买数量', "cancel");

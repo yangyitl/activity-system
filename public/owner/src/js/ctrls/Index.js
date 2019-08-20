@@ -48,10 +48,10 @@ var home = {
                 return;
             }
 
-            if (!name || !yqd.regEx('NAME', name)) {
-                $.toast('请填写真实姓名', "text");
-                return;
-            }
+            // if (!name || !yqd.regEx('NAME', name)) {
+            //     $.toast('请填写真实姓名', "text");
+            //     return;
+            // }
             yqd.request({
                 type: 'POST',
                 url: 'add/agent',

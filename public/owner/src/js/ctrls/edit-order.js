@@ -48,10 +48,10 @@ $(".button").click(function () {
         return;
     }
 
-    if (!name || !yqd.regEx('NAME', name)) {
-        $.toast('请填写真实姓名', "cancel");
-        return;
-    }
+    // if (!name || !yqd.regEx('NAME', name)) {
+    //     $.toast('请填写真实姓名', "cancel");
+    //     return;
+    // }
 
     if (!city || !yqd.regEx('CONTENT', city)) {
         $.toast('请填写省市区', "cancel");
