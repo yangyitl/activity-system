@@ -60,6 +60,9 @@ class OrderController extends BasisController
         if (!$number) {
             self::returnJson([], 400, '选择正确的数量规格');
         }
+        if (self::checkBlackAddress(self::$parameter->city . self::$parameter->addr) == false) {
+            self::returnJson([], 400, '该地址不在配送范围内');
+        }
         $number = $number['number'];
         $sn = date('YmdHis') . self::$userId . rand(100, 999);
         $city = explode(' ', self::$parameter->city);
@@ -614,5 +617,69 @@ class OrderController extends BasisController
             return '';
         }
     }
+
+    private static function checkBlackAddress($address)
+    {
+        $configs = [
+            ['青海', '青海海南州兴海县'],
+            ['青海', '青海省河南蒙古族自治县'],
+            ['天津', '天津河北五马路'],
+            ['新疆', '巴里坤县'],
+            ['新疆', '哈密淖毛湖镇'],
+            ['四川', '甘孜白玉县'],
+            ['四川', '甘孜石渠县'],
+            ['四川', '甘孜得荣县'],
+            ['青海', '玉树'],
+            ['青海省', '德令哈花土沟镇'],
+            ['福建省', '延平王台镇'],
+            ['云南省', '昭通永善县'],
+            ['海南省', '海口海府分部'],
+            ['四川', '广元剑阁'],
+            ['四川', '四川省甘孜巴塘县'],
+            ['四川', '甘孜乡城县'],
+            ['四川', '甘孜炉霍县'],
+            ['四川', '甘孜德格县'],
+            ['四川', '甘孜新龙县'],
+            ['甘肃省', '合作碌曲县'],
+            ['四川', '甘孜德格县'],
+            ['四川', '四川省宜宾珙县'],
+            ['四川', '长宁双河镇'],
+            ['四川', '珙县下罗镇'],
+            ['四川', '珙县底洞镇'],
+            ['四川', '珙县王家镇'],
+            ['四川', '珙县曹营镇'],
+            ['四川', '珙县石碑乡'],
+            ['四川', '珙县观斗乡'],
+            ['四川', '珙县珙泉镇'],
+            ['四川', '珙县洛亥镇'],
+            ['四川', '珙县洛表镇'],
+            ['四川', '珙县上罗镇'],
+            ['四川', '珙县巡场镇'],
+            ['四川', '珙县孝儿镇'],
+            ['四川', '珙县玉和苗族乡'],
+            ['青海省', '青海省海南州兴海县'],
+            ['西藏']
+        ];
+
+        foreach ($configs as $blackList)
+        {
+            $hit = false;
+            foreach ($blackList as $blackAddress) {
+                if (stripos($address, $blackAddress) === false) {
+                    break;
+                } else {
+                    $hit = true;
+                }
+            }
+
+            if ($hit == true) {
+                return false;
+            }
+        }
+
+        return true;
+
+    }
+
 
 }
