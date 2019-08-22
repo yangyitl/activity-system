@@ -9134,6 +9134,10 @@ var rawCitiesData = [
           {
             "label":"光明区",
             "value":"440309"
+          },
+          {
+            "label":"龙华区",
+            "value":"440310"
           }
         ]
       },
