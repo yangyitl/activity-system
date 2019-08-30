@@ -182,7 +182,7 @@ angular.module('zm').controller('orderCtrl', function ($scope, $modal, $rootVPat
 
         },
         init: function () {
-            $scope.dateRange = {startDate: moment(), endDate: moment()};
+            $scope.dateRange = {startDate: moment().startOf('hour'), endDate: moment().startOf('hour')};
             this.render();
         }
 
