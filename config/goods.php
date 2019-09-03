@@ -8,7 +8,7 @@
 
 return [
     0 => [
-        'goods_price' => 32,
+        'goods_price' => 31.9,
         'goods_name' => '胶原蛋白多肽燕窝果吸饮',
         'goods_id' => 2,
     ],
