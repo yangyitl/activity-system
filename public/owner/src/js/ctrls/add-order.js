@@ -113,6 +113,11 @@ yqd.queryAt('.add-button', 'click', function () {
         return;
     }
 
+    if (!remark) {
+        $.toast('请填写备注', "cancel");
+        return;
+    }
+
     var post = {
         'city': city,
         'num': num,
