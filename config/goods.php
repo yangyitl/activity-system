@@ -8,7 +8,7 @@
 
 return [
     [
-        'goods_price' => 39.9,
+        'goods_price' => 35,
         'goods_name' => '纪莱熙轻雾臻彩口红',
         'goods_id' => 3,
     ],
