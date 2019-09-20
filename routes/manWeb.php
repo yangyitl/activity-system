@@ -80,6 +80,7 @@ $router->group(
             $router->post('edit', ['as' => 'ManAdminNumberEdit', 'uses' => 'NumberController@edit']);
             // insert number
             $router->post('add', ['as' => 'ManAdminNumberAdd', 'uses' => 'NumberController@add']);
+            $router->post('del', ['as' => 'ManAdminNumberAdd', 'uses' => 'NumberController@del']);
 
         });
 

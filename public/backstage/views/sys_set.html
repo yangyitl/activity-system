@@ -24,6 +24,7 @@
                         <th>购买单位</th>
                         <th>对应数量(瓶)</th>
                         <th>时间</th>
+                        <th>操作</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -34,6 +35,9 @@
                         </td>
                         <td class="max-width-md">
                             {{item.updated_at}}
+                        </td>
+                        <td>
+                            <button class="btn btn-default m-xs" type="button" ng-click="FnSys.del($index)">删除</button>
                         </td>
                     </tr>
                     </tbody>

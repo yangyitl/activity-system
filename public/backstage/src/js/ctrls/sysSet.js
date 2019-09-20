@@ -71,6 +71,45 @@ angular.module('zm').controller('sysCtrl', function ($scope, $filter, $modal, $r
                 backdrop: 'static'
             });
         },
+        del: function (index) {
+            var _this = this,
+                itemInfo = $scope.listData[index];
+
+            var param = {
+                id: itemInfo.id
+            };
+            pop.confirm({
+                title: '温馨提示',
+                msg: '您确定要删除该规格吗吗？',
+                okText: '确定',
+                type: 'question',
+                confirm: function (res) {
+                    request({
+                        url: $rootVPath + 'Number/del',
+                        data: param,
+                        ok: function (res) {
+                            $scope.wait = false;
+                            pop.usual({
+                                title: '删除成功',
+                                msg: res.msg ? res.msg : '删除成功',
+                                type: 'success',
+                                handler: function (res) {
+                                    _this.render();
+                                }
+                            });
+                        },
+                        fail: function (res) {
+                            $scope.wait = false;
+                            pop.usual({
+                                title: '删除失败',
+                                msg: res.msg ? res.msg : '删除失败',
+                            });
+                        }
+                    });
+                }
+            })
+
+        },
 
         edit: function (index) {
             var _this = this,
