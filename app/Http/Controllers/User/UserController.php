@@ -90,7 +90,7 @@ class UserController extends BasisController
 
         $map[] = ['start_id', '=', 'user_id'];
         $total = Order::where($map)->count();
-        self::initArray($log, 'array');
+        //self::initArray($log, 'array');
 
         $number = Setting::where('key','=','INVENTORY')->value('data');
         if ($number<= 0 ){
