@@ -8,7 +8,12 @@
 
 return [
     [
-        'goods_price' => 35,
+        'goods_price' => 29.9,
+        'goods_name' => '昕莱熙富勒稀冻干粉',
+        'goods_id' => 4,
+    ],
+    [
+        'goods_price' => 32,
         'goods_name' => '纪莱熙轻雾臻彩口红',
         'goods_id' => 3,
     ],
